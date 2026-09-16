@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+html{scroll-behavior:smooth;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+body{margin:0;background:oklch(97% 0.006 75);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+a{color:oklch(46% 0.09 45);}
+a:hover{color:oklch(38% 0.09 45);}
+</style>
+</helmet>
+<div style="min-height:100vh;background:oklch(97% 0.006 75);color:oklch(15% 0.004 75);overflow-x:hidden;">
+
+<header style="position:sticky;top:0;z-index:50;background:oklch(97% 0.006 75);border-bottom:1px solid oklch(85% 0.006 75);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:22px clamp(20px,5vw,64px);max-width:1440px;margin:0 auto;">
+    <a href="#home" style="font-weight:700;letter-spacing:-0.02em;font-size:19px;color:oklch(15% 0.004 75);text-decoration:none;">ARDA.</a>
+    <nav style="display:{{ navDisplay }};gap:36px;">
+      <a href="#home" style="font-size:14px;color:oklch(15% 0.004 75);text-decoration:none;">Home</a>
+      <a href="#about" style="font-size:14px;color:oklch(30% 0.006 75);text-decoration:none;">About</a>
+      <a href="#projects" style="font-size:14px;color:oklch(30% 0.006 75);text-decoration:none;">Projects</a>
+      <a href="#experience" style="font-size:14px;color:oklch(30% 0.006 75);text-decoration:none;">Experience</a>
+      <a href="#contact" style="font-size:14px;color:oklch(30% 0.006 75);text-decoration:none;">Contact</a>
+    </nav>
+    <button onClick="{{ toggleMenu }}" style="display:{{ btnDisplay }};background:none;border:none;font-size:14px;letter-spacing:0.05em;color:oklch(15% 0.004 75);cursor:pointer;padding:8px;">{{ menuLabel }}</button>
+  </div>
+  <sc-if value="{{ showMobileMenu }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-direction:column;padding:0 24px 24px;gap:18px;border-top:1px solid oklch(85% 0.006 75);">
+      <a href="#home" onClick="{{ closeMenu }}" style="font-size:15px;color:oklch(15% 0.004 75);text-decoration:none;padding-top:16px;">Home</a>
+      <a href="#about" onClick="{{ closeMenu }}" style="font-size:15px;color:oklch(30% 0.006 75);text-decoration:none;">About</a>
+      <a href="#projects" onClick="{{ closeMenu }}" style="font-size:15px;color:oklch(30% 0.006 75);text-decoration:none;">Projects</a>
+      <a href="#experience" onClick="{{ closeMenu }}" style="font-size:15px;color:oklch(30% 0.006 75);text-decoration:none;">Experience</a>
+      <a href="#contact" onClick="{{ closeMenu }}" style="font-size:15px;color:oklch(30% 0.006 75);text-decoration:none;">Contact</a>
+    </div>
+  </sc-if>
+</header>
+
+<section id="home" style="max-width:1440px;margin:0 auto;padding:clamp(60px,12vw,140px) clamp(20px,5vw,64px) clamp(60px,10vw,110px);">
+  <div style="font-size:13px;letter-spacing:0.18em;color:oklch(48% 0.008 75);">SOFTWARE · DATA · AI</div>
+  <h1 style="font-size:clamp(2.6rem,7.5vw,6.4rem);line-height:0.98;letter-spacing:-0.025em;font-weight:700;margin:20px 0 0;max-width:1100px;">Building useful things with software, data and AI.</h1>
+  <p style="font-size:clamp(1.05rem,1.6vw,1.35rem);line-height:1.5;color:oklch(30% 0.006 75);max-width:620px;margin:32px 0 0;">I'm Arda Kütük, a Management Information Systems student based in Istanbul, focused on building software products and exploring the intersection of artificial intelligence, data and real-world systems.</p>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:40px;">
+    <a href="#projects" style="background:oklch(15% 0.004 75);color:oklch(97% 0.006 75);text-decoration:none;padding:16px 30px;font-size:14px;letter-spacing:0.02em;">View Projects</a>
+    <a href="#about" style="border:1px solid oklch(15% 0.004 75);color:oklch(15% 0.004 75);text-decoration:none;padding:16px 30px;font-size:14px;letter-spacing:0.02em;">About Me</a>
+  </div>
+</section>
+
+<section style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,5vw,64px) clamp(80px,10vw,120px);border-top:1px solid oklch(85% 0.006 75);">
+  <div style="padding-top:clamp(60px,8vw,90px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:40px;">
+    <h2 style="font-size:clamp(1.9rem,3.2vw,2.6rem);letter-spacing:-0.02em;font-weight:700;margin:0;">What I Focus On</h2>
+    <p style="font-size:1.05rem;line-height:1.6;color:oklch(30% 0.006 75);margin:0;max-width:560px;">My work sits between technology, data and product thinking. I learn by building systems that solve concrete problems.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:oklch(85% 0.006 75);margin-top:56px;border:1px solid oklch(85% 0.006 75);">
+    <sc-for list="{{ focusCards }}" as="card" hint-placeholder-count="3">
+      <div style="background:oklch(97% 0.006 75);padding:40px 32px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;">
+        <div style="font-size:13px;color:oklch(46% 0.09 45);letter-spacing:0.05em;">{{ card.num }}</div>
+        <div>
+          <h3 style="font-size:1.3rem;letter-spacing:-0.01em;margin:0 0 12px;font-weight:700;">{{ card.title }}</h3>
+          <p style="font-size:0.95rem;line-height:1.6;color:oklch(30% 0.006 75);margin:0;">{{ card.text }}</p>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:oklch(15% 0.004 75);color:oklch(97% 0.006 75);padding:clamp(70px,10vw,110px) clamp(20px,5vw,64px);">
+  <div style="max-width:1440px;margin:0 auto;">
+    <h2 style="font-size:clamp(1.9rem,3.2vw,2.6rem);letter-spacing:-0.02em;font-weight:700;margin:0 0 56px;">Areas I Work In</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:oklch(30% 0.006 75);border:1px solid oklch(30% 0.006 75);">
+      <sc-for list="{{ serviceBlocks }}" as="s" hint-placeholder-count="4">
+        <div style="background:oklch(15% 0.004 75);padding:36px 28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div style="font-size:12px;letter-spacing:0.12em;color:oklch(65% 0.008 75);">{{ s.title }}</div>
+          <p style="font-size:0.95rem;line-height:1.6;color:oklch(80% 0.006 75);margin:0;">{{ s.text }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="max-width:1440px;margin:0 auto;padding:clamp(70px,10vw,110px) clamp(20px,5vw,64px);border-top:1px solid oklch(85% 0.006 75);">
+  <h2 style="font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.15;letter-spacing:-0.02em;font-weight:700;margin:0 0 48px;max-width:900px;">Technology makes the most sense to me when it solves a real problem.</h2>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <p style="font-size:1.1rem;line-height:1.7;color:oklch(25% 0.005 75);margin:0;">I'm Arda Kütük, a Management Information Systems student at Kadir Has University in Istanbul.</p>
+      <p style="font-size:1.1rem;line-height:1.7;color:oklch(25% 0.005 75);margin:0;">My interests sit across software engineering, data, artificial intelligence and product development. Rather than focusing only on writing code, I like understanding the full system around a product — the user, the workflow, the data and the business problem behind it.</p>
+      <p style="font-size:1.1rem;line-height:1.7;color:oklch(25% 0.005 75);margin:0;">I spend much of my time learning by building. My projects have ranged from backend APIs and data analysis to finance tools, digital menu systems and enterprise portal concepts.</p>
+      <p style="font-size:1.1rem;line-height:1.7;color:oklch(25% 0.005 75);margin:0;">My current direction is toward AI and data-driven software engineering, while continuing to strengthen my foundations in backend development and system design.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:oklch(85% 0.006 75);border:1px solid oklch(85% 0.006 75);align-content:start;">
+      <div style="background:oklch(94% 0.008 60);padding:28px;">
+        <div style="font-size:12px;letter-spacing:0.08em;color:oklch(48% 0.008 75);margin-bottom:10px;">STUDYING</div>
+        <div style="font-size:1.05rem;font-weight:700;">Management Information Systems</div>
+        <div style="font-size:0.9rem;color:oklch(40% 0.006 75);margin-top:4px;">Kadir Has University</div>
+      </div>
+      <div style="background:oklch(94% 0.008 60);padding:28px;">
+        <div style="font-size:12px;letter-spacing:0.08em;color:oklch(48% 0.008 75);margin-bottom:10px;">BASED IN</div>
+        <div style="font-size:1.05rem;font-weight:700;">Istanbul, Türkiye</div>
+      </div>
+      <div style="background:oklch(94% 0.008 60);padding:28px;">
+        <div style="font-size:12px;letter-spacing:0.08em;color:oklch(48% 0.008 75);margin-bottom:10px;">FOCUS</div>
+        <div style="font-size:1.05rem;font-weight:700;">AI & Data</div>
+      </div>
+      <div style="background:oklch(94% 0.008 60);padding:28px;">
+        <div style="font-size:12px;letter-spacing:0.08em;color:oklch(48% 0.008 75);margin-bottom:10px;">APPROACH</div>
+        <div style="font-size:1.05rem;font-weight:700;">Learn by Building</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:64px;">
+    <div style="font-size:13px;letter-spacing:0.1em;color:oklch(46% 0.09 45);margin-bottom:24px;">HOW I WORK</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:oklch(85% 0.006 75);border:1px solid oklch(85% 0.006 75);">
+      <sc-for list="{{ howIWork }}" as="h" hint-placeholder-count="4">
+        <div style="background:oklch(97% 0.006 75);padding:28px;min-height:150px;">
+          <div style="font-size:0.85rem;font-weight:700;letter-spacing:0.06em;margin-bottom:12px;">{{ h.title }}</div>
+          <p style="font-size:0.92rem;line-height:1.55;color:oklch(30% 0.006 75);margin:0;">{{ h.text }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="max-width:1440px;margin:0 auto;padding:clamp(70px,10vw,110px) clamp(20px,5vw,64px);border-top:1px solid oklch(85% 0.006 75);">
+  <h2 style="font-size:clamp(1.9rem,3.2vw,2.6rem);letter-spacing:-0.02em;font-weight:700;margin:0;">Selected Work</h2>
+  <p style="font-size:1.05rem;line-height:1.6;color:oklch(30% 0.006 75);max-width:560px;margin:16px 0 56px;">A selection of projects where I explored software engineering, data, APIs and product development.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1px;background:oklch(85% 0.006 75);border:1px solid oklch(85% 0.006 75);">
+    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+      <div style="background:oklch(97% 0.006 75);padding:36px 32px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div style="font-size:12px;letter-spacing:0.06em;color:oklch(46% 0.09 45);">{{ p.category }}</div>
+          <h3 style="font-size:1.35rem;font-weight:700;letter-spacing:-0.01em;margin:10px 0 12px;">{{ p.title }}</h3>
+          <p style="font-size:0.95rem;line-height:1.6;color:oklch(30% 0.006 75);margin:0;">{{ p.desc }}</p>
+        </div>
+        <div style="margin-top:20px;">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <sc-for list="{{ p.tags }}" as="t" hint-placeholder-count="3">
+              <span style="font-size:11px;letter-spacing:0.04em;border:1px solid oklch(85% 0.006 75);padding:5px 10px;color:oklch(40% 0.006 75);">{{ t }}</span>
+            </sc-for>
+          </div>
+          <div style="font-family:monospace;font-size:11px;color:oklch(55% 0.008 75);margin-top:14px;">GitHub · Live Demo · Case Study — coming soon</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="experience" style="background:oklch(94% 0.008 60);padding:clamp(70px,10vw,110px) clamp(20px,5vw,64px);">
+  <div style="max-width:1440px;margin:0 auto;">
+    <h2 style="font-size:clamp(1.9rem,3.2vw,2.6rem);letter-spacing:-0.02em;font-weight:700;margin:0;">Experience</h2>
+    <p style="font-size:1.05rem;line-height:1.6;color:oklch(30% 0.006 75);max-width:560px;margin:16px 0 56px;">Professional environments where I learned how technology operates beyond personal projects.</p>
+    <div style="display:flex;flex-direction:column;">
+      <sc-for list="{{ experience }}" as="e" hint-placeholder-count="2">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:32px;padding:32px 0;border-top:1px solid oklch(85% 0.006 75);">
+          <div>
+            <div style="font-weight:700;font-size:1.1rem;">{{ e.company }}</div>
+            <div style="font-size:0.95rem;color:oklch(40% 0.006 75);margin-top:6px;">{{ e.role }}</div>
+          </div>
+          <p style="font-size:1rem;line-height:1.65;color:oklch(30% 0.006 75);margin:0;">{{ e.text }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="max-width:1440px;margin:0 auto;padding:clamp(70px,10vw,110px) clamp(20px,5vw,64px);">
+  <h2 style="font-size:clamp(2.2rem,5.5vw,4rem);letter-spacing:-0.02em;font-weight:700;margin:0;">Let's connect.</h2>
+  <p style="font-size:1.1rem;line-height:1.6;color:oklch(30% 0.006 75);max-width:560px;margin:24px 0 64px;">I'm always interested in conversations around software, AI, data, technology and interesting projects.</p>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:56px;">
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:oklch(85% 0.006 75);border:1px solid oklch(85% 0.006 75);align-content:start;">
+      <div style="background:oklch(94% 0.008 60);padding:26px;">
+        <div style="font-size:11px;letter-spacing:0.08em;color:oklch(48% 0.008 75);margin-bottom:8px;">EMAIL</div>
+        <div style="font-size:0.95rem;color:oklch(40% 0.006 75);">[add email later]</div>
+      </div>
+      <div style="background:oklch(94% 0.008 60);padding:26px;">
+        <div style="font-size:11px;letter-spacing:0.08em;color:oklch(48% 0.008 75);margin-bottom:8px;">GITHUB</div>
+        <a href="https://github.com/ArdaKutuk" style="font-size:0.95rem;text-decoration:none;">github.com/ArdaKutuk</a>
+      </div>
+      <div style="background:oklch(94% 0.008 60);padding:26px;">
+        <div style="font-size:11px;letter-spacing:0.08em;color:oklch(48% 0.008 75);margin-bottom:8px;">LINKEDIN</div>
+        <div style="font-size:0.95rem;color:oklch(40% 0.006 75);">[add LinkedIn URL later]</div>
+      </div>
+      <div style="background:oklch(94% 0.008 60);padding:26px;">
+        <div style="font-size:11px;letter-spacing:0.08em;color:oklch(48% 0.008 75);margin-bottom:8px;">LOCATION</div>
+        <div style="font-size:0.95rem;font-weight:700;">Istanbul, Türkiye</div>
+      </div>
+    </div>
+    <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:18px;">
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <label style="font-size:12px;letter-spacing:0.06em;color:oklch(48% 0.008 75);">NAME</label>
+        <input type="text" style="border:none;border-bottom:1px solid oklch(70% 0.008 75);background:transparent;padding:10px 0;font-size:1rem;font-family:inherit;color:oklch(15% 0.004 75);" />
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <label style="font-size:12px;letter-spacing:0.06em;color:oklch(48% 0.008 75);">EMAIL</label>
+        <input type="email" style="border:none;border-bottom:1px solid oklch(70% 0.008 75);background:transparent;padding:10px 0;font-size:1rem;font-family:inherit;color:oklch(15% 0.004 75);" />
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <label style="font-size:12px;letter-spacing:0.06em;color:oklch(48% 0.008 75);">MESSAGE</label>
+        <textarea rows="4" style="border:none;border-bottom:1px solid oklch(70% 0.008 75);background:transparent;padding:10px 0;font-size:1rem;font-family:inherit;color:oklch(15% 0.004 75);resize:vertical;"></textarea>
+      </div>
+      <button type="submit" style="margin-top:8px;background:oklch(15% 0.004 75);color:oklch(97% 0.006 75);border:none;padding:16px 30px;font-size:14px;letter-spacing:0.02em;cursor:pointer;align-self:flex-start;">Send Message</button>
+      <p style="font-size:0.85rem;color:oklch(48% 0.008 75);margin:4px 0 0;">Form UI only — needs backend wiring to send messages. Have a project, idea or just want to talk technology? Feel free to reach out.</p>
+    </form>
+  </div>
+</section>
+
+<footer style="border-top:1px solid oklch(85% 0.006 75);padding:56px clamp(20px,5vw,64px) 40px;">
+  <div style="max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;">
+    <div>
+      <div style="font-weight:700;letter-spacing:-0.02em;font-size:17px;">ARDA KÜTÜK</div>
+      <p style="font-size:0.95rem;color:oklch(48% 0.008 75);max-width:340px;margin:12px 0 0;">Building and learning at the intersection of software, data and intelligent systems.</p>
+    </div>
+    <div style="display:flex;gap:40px;flex-wrap:wrap;">
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="#home" style="font-size:14px;color:oklch(30% 0.006 75);text-decoration:none;">Home</a>
+        <a href="#about" style="font-size:14px;color:oklch(30% 0.006 75);text-decoration:none;">About</a>
+        <a href="#projects" style="font-size:14px;color:oklch(30% 0.006 75);text-decoration:none;">Projects</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="#experience" style="font-size:14px;color:oklch(30% 0.006 75);text-decoration:none;">Experience</a>
+        <a href="https://github.com/ArdaKutuk" style="font-size:14px;color:oklch(30% 0.006 75);text-decoration:none;">GitHub</a>
+        <a href="#contact" style="font-size:14px;color:oklch(30% 0.006 75);text-decoration:none;">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1440px;margin:40px auto 0;font-size:13px;color:oklch(55% 0.008 75);">© 2026 Arda Kütük.</div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuOpen: false, isMobile: false };
+  componentDidMount() {
+    this.onResize = () => this.setState({ isMobile: window.innerWidth < 860 });
+    this.onResize();
+    window.addEventListener('resize', this.onResize);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
+  renderVals() {
+    const isMobile = this.state.isMobile;
+    return {
+      navDisplay: isMobile ? 'none' : 'flex',
+      btnDisplay: isMobile ? 'block' : 'none',
+      menuLabel: this.state.menuOpen ? 'CLOSE' : 'MENU',
+      showMobileMenu: isMobile && this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      onSubmit: (e) => e.preventDefault(),
+      focusCards: [
+        { num: '01', title: 'AI & Data', text: 'Exploring Python, data analysis and machine learning to understand how intelligent systems can support better decisions.' },
+        { num: '02', title: 'Backend & Systems', text: 'Building APIs, databases and application logic with an emphasis on clear architecture and maintainable systems.' },
+        { num: '03', title: 'Product Thinking', text: 'Looking beyond the code to understand users, workflows and the business problems a product is meant to solve.' }
+      ],
+      serviceBlocks: [
+        { title: 'PYTHON & DATA', text: 'Data processing, analysis and Python-based applications.' },
+        { title: 'BACKEND DEVELOPMENT', text: 'APIs, databases and application logic using technologies such as FastAPI, SQL and REST.' },
+        { title: 'WEB PRODUCTS', text: 'Building functional web applications from interface to backend architecture.' },
+        { title: 'SYSTEMS & BUSINESS ANALYSIS', text: 'Understanding workflows, requirements and how software fits into real business processes.' }
+      ],
+      howIWork: [
+        { title: 'UNDERSTAND', text: 'Start with the problem before thinking about the technology.' },
+        { title: 'BUILD', text: 'Turn ideas into working prototypes instead of keeping them theoretical.' },
+        { title: 'ITERATE', text: 'Test, improve and simplify based on what actually works.' },
+        { title: 'LEARN', text: 'Use every project as an opportunity to understand the system more deeply.' }
+      ],
+      projects: [
+        { title: 'Moneytrack', category: 'Personal Finance · Desktop Application', desc: 'A personal finance application designed to organize budgets, recurring expenses, bills and debt in one clear interface.', tags: ['Python', 'Finance', 'Product Design'] },
+        { title: 'Student Performance Analysis', category: 'Data Analysis', desc: 'A Python and Pandas project exploring student performance data through cleaning, analysis and meaningful insights.', tags: ['Python', 'Pandas', 'Data Analysis'] },
+        { title: 'Grades API', category: 'Backend · REST API', desc: 'A FastAPI-based backend for managing courses, grading weights and student grade information.', tags: ['FastAPI', 'Python', 'REST API'] },
+        { title: 'Digital QR Menu', category: 'Web Application', desc: 'A multilingual digital menu concept for restaurants and cafés with customer-facing and administrative interfaces.', tags: ['Web', 'Multi-language', 'Product'] },
+        { title: 'Corporate Portal Prototype', category: 'Enterprise Software · Product Prototype', desc: 'A corporate employee portal prototype designed around internal services, information access and administrative management.', tags: ['Enterprise', 'Portal', 'Systems'] },
+        { title: 'Ping Logger', category: 'macOS Utility', desc: 'A lightweight network utility designed to monitor connectivity and record failed ping attempts.', tags: ['Networking', 'macOS', 'Utility'] }
+      ],
+      experience: [
+        { company: 'ŞEKERBANK', role: 'IT Intern', text: 'Worked across different areas of enterprise IT, gaining exposure to technical support, networking, infrastructure and cybersecurity concepts.' },
+        { company: 'KALE ENDÜSTRİ HOLDİNG', role: 'Business Analyst Intern', text: 'Worked with business processes, CRM and enterprise systems while gaining experience in requirements, workflows, system testing and digital product thinking.' }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>
