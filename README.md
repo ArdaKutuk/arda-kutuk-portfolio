@@ -1,10 +1,8 @@
 # Arda Kütük Portfolio
 
-Personal portfolio of Arda Kütük — a Management Information Systems student
-focused on software development, data and artificial intelligence.
-
-Implemented from a Claude Design handoff (see [`project/`](project)) as a
-production Next.js site. Available in Turkish (default) and English.
+Personal portfolio of Arda Kütük — software engineering, data and AI.
+An editorial, content-first site: large typography, a single accent color,
+no card-grid template patterns. Available in Turkish (default) and English.
 
 ## Tech Stack
 
@@ -35,7 +33,7 @@ npm start
 ```
 src/
   app/
-    [locale]/            # Routes for /tr and /en: home, /projects/[slug]
+    [locale]/            # Routes for /tr and /en: home, /projects/[slug], not-found
     sitemap.ts, robots.ts, icon.svg
   proxy.ts                # Locale detection/redirect (Next's middleware convention)
   i18n/
@@ -44,14 +42,27 @@ src/
     tr.ts / en.ts          # Translated copy
     dictionaries.ts        # getDictionary(locale)
   components/
-    layout/                # Header (with language switcher), Footer
-    sections/               # Page sections (Hero, About, Projects, Contact, ...)
-    projects/               # Project card
-    ui/                     # Reusable UI (Container, CtaButton, ContactForm, ...)
-  data/                     # Locale-aware content: projects, experience
-  lib/                      # Site config and shared style tokens
-project/                    # Original Claude Design handoff bundle (reference only)
+    layout/                 # Header (visible nav + language switcher), Footer
+    sections/                # Hero, Projects (Selected Work), Expertise, Experience,
+                              #   About, Currently, Contact
+    projects/                # ProjectCard (variant: featured/horizontal/standard),
+                              #   ProjectVisual (image slot with typographic fallback)
+    ui/                      # Container, Button, LanguageSwitcher, icons
+  data/                      # Locale-aware content: projects, experience
+  lib/                       # Site config, design tokens (spacing/container), locale cookie
+project/                     # Original Claude Design handoff bundle (reference only)
 ```
+
+## Design System
+
+- **Typography scale** — `.text-display / .text-h1 / .text-h2 / .text-h3 /
+  .text-body-lg / .text-body / .text-small / .text-meta` utility classes
+  defined once in `globals.css`, used everywhere instead of one-off sizes.
+- **Color** — one background, one surface tint, a three-step text hierarchy
+  (ink/body/muted), one hairline border color, one accent. No secondary
+  accent colors.
+- **Spacing** — a single `.section-y` vertical rhythm and one `container`
+  width (`src/lib/styles.ts`), rather than per-component arbitrary values.
 
 ## Configuration
 
@@ -61,13 +72,16 @@ domain is attached (used for metadata, Open Graph tags and the sitemap).
 ## Adding a Project
 
 Add an entry to [`src/data/projects.ts`](src/data/projects.ts) with `tr` and
-`en` content blocks. Each project automatically gets a detail page at
-`/tr/projects/[slug]` and `/en/projects/[slug]`; leave `githubUrl` / `liveUrl`
-as `null` until they exist.
+`en` content blocks. Set `status: "published"` once the content is real —
+`"draft"` entries are excluded from every listing, the sitemap and static
+generation (no broken links, no placeholder text ever ships). Fields:
 
-**Known placeholder:** the "IT Servis Masası" / "IT Service Desk" project has
-no confirmed description or tags yet — see the `it-servis-masasi` entry in
-`projects.ts`.
+- `shortDescription` / `description` — required
+- `problem`, `solution`, `features[]`, `architecture`, `challenges`,
+  `learnings` — all optional; the case-study page only renders sections that
+  have content
+- `coverImage` / `gallery[]` — optional; when unset, `ProjectVisual` renders a
+  quiet typographic mark instead of a "coming soon" placeholder
 
 ## Editing Copy
 

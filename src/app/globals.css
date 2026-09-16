@@ -1,28 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  /* Design tokens — sourced 1:1 from the Claude Design handoff (project/Portfolio.dc.html) */
+  /* Restrained palette: two backgrounds, a three-step text hierarchy,
+     one hairline border, one accent. No secondary/tertiary accent colors. */
   --color-bg: oklch(97% 0.006 75);
+  --color-surface: oklch(94% 0.008 60);
   --color-ink: oklch(15% 0.004 75);
-  --color-body: oklch(30% 0.006 75);
-  --color-body-strong: oklch(25% 0.005 75);
+  --color-body: oklch(32% 0.006 75);
   --color-muted: oklch(48% 0.008 75);
-  --color-label: oklch(40% 0.006 75);
   --color-border: oklch(85% 0.006 75);
   --color-accent: oklch(46% 0.09 45);
   --color-accent-hover: oklch(38% 0.09 45);
-  --color-card: oklch(94% 0.008 60);
-
-  --color-dark: oklch(15% 0.004 75);
-  --color-dark-border: oklch(30% 0.006 75);
-  --color-dark-muted: oklch(65% 0.008 75);
-  --color-dark-body: oklch(80% 0.006 75);
-
-  --color-footer-muted: oklch(55% 0.008 75);
 
   --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  /* Matches the design's JS-driven nav breakpoint (isMobile = width < 860) */
+  /* Matches the header's nav collapse breakpoint. */
   --breakpoint-nav: 860px;
 }
 
@@ -39,10 +31,7 @@
   }
 
   a {
-    color: var(--color-accent);
-  }
-  a:hover {
-    color: var(--color-accent-hover);
+    color: inherit;
   }
 
   :focus-visible {
@@ -51,10 +40,69 @@
   }
 }
 
+/* Typographic scale — the single source of truth for text sizing across the
+   site, so headings and body copy stay consistent instead of one-off clamp()
+   values per component. */
+@layer components {
+  .text-display {
+    font-size: clamp(2.75rem, 1.5rem + 4vw, 5.25rem);
+    line-height: 1.03;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  .text-h1 {
+    font-size: clamp(2rem, 1.4rem + 1.8vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    font-weight: 700;
+  }
+  .text-h2 {
+    font-size: clamp(1.375rem, 1.15rem + 0.8vw, 1.75rem);
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+  }
+  .text-h3 {
+    font-size: 1.125rem;
+    line-height: 1.35;
+    font-weight: 600;
+  }
+  .text-body-lg {
+    font-size: clamp(1.05rem, 1rem + 0.3vw, 1.25rem);
+    line-height: 1.6;
+  }
+  .text-body {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .text-small {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  .text-meta {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Readable measure for prose blocks. */
+  .prose-measure {
+    max-width: 62ch;
+  }
+
+  /* One consistent vertical rhythm for full sections. */
+  .section-y {
+    padding-top: clamp(64px, 5rem + 3vw, 112px);
+    padding-bottom: clamp(64px, 5rem + 3vw, 112px);
+  }
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -63,7 +111,7 @@
 }
 
 .reveal {
-  animation: fadeUp 0.7s ease both;
+  animation: fadeUp 0.6s ease both;
 }
 
 @media (prefers-reduced-motion: reduce) {

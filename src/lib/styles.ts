@@ -1,17 +1,13 @@
 /**
- * Small set of shared layout tokens reused across sections: fluid clamp()
- * paddings, a 1440px content width, and the rounded "card" shape language
- * used throughout the site.
+ * Shared layout primitives reused across sections — a single content width,
+ * one vertical rhythm (`.section-y`, defined in globals.css) and one hairline
+ * divider — so spacing and structure stay consistent without one-off values
+ * per component.
  */
-export const container = "mx-auto w-full max-w-[1440px] px-[clamp(20px,5vw,64px)]";
+export const container = "mx-auto w-full max-w-[1200px] px-6 sm:px-8 lg:px-10";
 
-export const sectionPadY = "py-[clamp(60px,8vw,100px)]";
+export const sectionY = "section-y";
 
-export const cardGrid = "grid gap-5";
+export const divider = "border-t border-border";
 
-export const card = "rounded-3xl border border-border bg-bg";
-
-export const cardTint = "rounded-3xl bg-card";
-
-export const pillTag =
-  "rounded-full text-[11px] tracking-[0.04em] border border-border px-3 py-[6px] text-label";
+export const tag = "text-small text-muted";

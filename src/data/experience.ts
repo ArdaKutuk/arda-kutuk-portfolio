@@ -7,12 +7,19 @@ interface ExperienceLocaleContent {
 
 interface ExperienceSource {
   company: string;
+  location: string;
+  /** Unconfirmed dates are left undefined rather than guessed — see README. */
+  year?: string;
+  tags: string[];
   tr: ExperienceLocaleContent;
   en: ExperienceLocaleContent;
 }
 
 export interface ExperienceEntry {
   company: string;
+  location: string;
+  year?: string;
+  tags: string[];
   role: string;
   text: string;
 }
@@ -20,6 +27,8 @@ export interface ExperienceEntry {
 const experienceSources: ExperienceSource[] = [
   {
     company: "ŞEKERBANK",
+    location: "İstanbul",
+    tags: ["IT", "Networking", "Cybersecurity"],
     tr: {
       role: "BT Stajyeri",
       text: "Kurumsal BT'nin farklı alanlarında çalışarak teknik destek, ağ altyapısı ve siber güvenlik konularında deneyim kazandım.",
@@ -31,6 +40,8 @@ const experienceSources: ExperienceSource[] = [
   },
   {
     company: "KALE ENDÜSTRİ HOLDİNG",
+    location: "İstanbul",
+    tags: ["Business Analysis", "CRM", "Systems"],
     tr: {
       role: "İş Analisti Stajyeri",
       text: "İş süreçleri, CRM ve kurumsal sistemler üzerinde çalışırken gereksinim analizi, iş akışları, sistem testi ve dijital ürün düşüncesi konularında deneyim kazandım.",
@@ -45,6 +56,9 @@ const experienceSources: ExperienceSource[] = [
 export function getExperience(locale: Locale): ExperienceEntry[] {
   return experienceSources.map((source) => ({
     company: source.company,
+    location: source.location,
+    year: source.year,
+    tags: source.tags,
     ...source[locale],
   }));
 }

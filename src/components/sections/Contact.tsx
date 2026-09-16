@@ -1,44 +1,46 @@
 import Container from "@/components/ui/Container";
-import ContactForm from "@/components/ui/ContactForm";
+import { socialLinks } from "@/lib/site";
+import { ExternalLinkIcon } from "@/components/ui/icons";
 import type { Dictionary } from "@/i18n/types";
-import { sectionPadY, cardGrid, cardTint } from "@/lib/styles";
+import { sectionY } from "@/lib/styles";
 
 export default function Contact({ dict }: { dict: Dictionary }) {
   return (
-    <section id="contact">
-      <Container className={sectionPadY}>
-        <h2 className="text-[clamp(2.2rem,5.5vw,4rem)] tracking-[-0.02em] font-bold m-0 text-ink">
-          {dict.contact.heading}
-        </h2>
-        <p className="text-[1.1rem] leading-[1.6] text-body max-w-[560px] mt-6 mb-16">
-          {dict.contact.description}
-        </p>
+    <section id="contact" className="border-t border-border">
+      <Container className={sectionY}>
+        <div className="max-w-[640px]">
+          <h2 className="text-h1 text-ink">{dict.contact.heading}</h2>
+          <p className="text-body-lg text-body mt-4">{dict.contact.description}</p>
+        </div>
 
-        <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] gap-14">
-          <div className={`${cardGrid} grid-cols-2 content-start`}>
-            {dict.contact.info.map((item) => (
-              <div key={item.label} className={`${cardTint} p-[26px]`}>
-                <div className="text-[11px] tracking-[0.08em] text-muted mb-2">
-                  {item.label}
-                </div>
-                {item.href ? (
-                  <a href={item.href} className="text-[0.95rem] no-underline">
-                    {item.value}
-                  </a>
-                ) : (
-                  <div
-                    className={`text-[0.95rem] ${
-                      item.emphasis ? "font-bold text-ink" : "text-label"
-                    }`}
-                  >
-                    {item.value}
-                  </div>
-                )}
-              </div>
-            ))}
+        <div className="mt-10">
+          <a
+            href={`mailto:${socialLinks.email}`}
+            className="text-h1 text-ink no-underline transition-colors hover:text-accent break-all"
+          >
+            {socialLinks.email}
+          </a>
+
+          <div className="mt-8 flex flex-wrap gap-x-10 gap-y-3">
+            <a
+              href={socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-body text-body no-underline inline-flex items-center gap-1.5 transition-colors hover:text-ink"
+            >
+              {dict.contact.linkedinLabel}
+              <ExternalLinkIcon className="text-muted" />
+            </a>
+            <a
+              href={socialLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-body text-body no-underline inline-flex items-center gap-1.5 transition-colors hover:text-ink"
+            >
+              {dict.contact.githubLabel}
+              <ExternalLinkIcon className="text-muted" />
+            </a>
           </div>
-
-          <ContactForm dict={dict} />
         </div>
       </Container>
     </section>

@@ -1,8 +1,7 @@
-export interface ContactInfoItem {
-  label: string;
-  value: string;
-  href?: string;
-  emphasis?: boolean;
+export interface ExpertiseArea {
+  title: string;
+  description: string;
+  technologies: string[];
 }
 
 export interface Dictionary {
@@ -11,14 +10,12 @@ export interface Dictionary {
     description: string;
   };
   nav: {
-    home: string;
-    about: string;
-    projects: string;
+    work: string;
     experience: string;
+    about: string;
     contact: string;
   };
   header: {
-    contactCta: string;
     menuOpen: string;
     menuClose: string;
   };
@@ -26,61 +23,46 @@ export interface Dictionary {
     eyebrow: string;
     heading: string;
     description: string;
-    viewProjects: string;
-    aboutMe: string;
+    primaryCta: string;
+    secondaryCta: string;
   };
-  focus: {
+  work: {
     heading: string;
     description: string;
-    cards: { num: string; title: string; text: string }[];
-  };
-  services: {
-    heading: string;
-    blocks: { title: string; text: string }[];
-  };
-  about: {
-    heading: string;
-    paragraphs: string[];
-    stats: { label: string; value: string; sub?: string }[];
-    howIWorkLabel: string;
-    howIWork: { title: string; text: string }[];
-  };
-  projectsSection: {
-    heading: string;
-    description: string;
-    comingSoon: string;
-    githubLabel: string;
+    viewProject: string;
     liveDemoLabel: string;
-    caseStudyLabel: string;
   };
-  projectDetail: {
-    back: string;
-    overview: string;
-    viewOnGithub: string;
-    liveDemo: string;
+  expertise: {
+    heading: string;
+    description: string;
+    areas: ExpertiseArea[];
   };
   experience: {
     heading: string;
     description: string;
   };
+  about: {
+    heading: string;
+    paragraphs: string[];
+    studyingLabel: string;
+    studyingValue: string;
+    universityValue: string;
+    basedInLabel: string;
+    basedInValue: string;
+  };
+  currently: {
+    heading: string;
+    buildingLabel: string;
+    buildingValue: string;
+    focusLabel: string;
+    focusValue: string;
+  };
   contact: {
     heading: string;
     description: string;
-    info: ContactInfoItem[];
-    form: {
-      nameLabel: string;
-      emailLabel: string;
-      messageLabel: string;
-      nameError: string;
-      emailRequiredError: string;
-      emailInvalidError: string;
-      messageError: string;
-      send: string;
-      sending: string;
-      successTitle: string; // "{name}" is replaced at render time
-      successBody: string;
-      disclaimer: string;
-    };
+    emailLabel: string;
+    linkedinLabel: string;
+    githubLabel: string;
   };
   footer: {
     tagline: string;
@@ -89,5 +71,26 @@ export interface Dictionary {
   languageSwitcher: {
     tr: string;
     en: string;
+  };
+  notFound: {
+    title: string;
+    description: string;
+    cta: string;
+  };
+  projectDetail: {
+    allProjects: string;
+    role: string;
+    year: string;
+    overview: string;
+    problem: string;
+    solution: string;
+    features: string;
+    architecture: string;
+    techStack: string;
+    challenges: string;
+    learnings: string;
+    viewOnGithub: string;
+    liveDemo: string;
+    nextProject: string;
   };
 }

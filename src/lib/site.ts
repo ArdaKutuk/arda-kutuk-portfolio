@@ -9,5 +9,4 @@ export const socialLinks = {
   github: "https://github.com/ArdaKutuk",
   linkedin: "https://www.linkedin.com/in/ardak%C3%BCt%C3%BCk/",
   email: "ardakutuk04@icloud.com",
-  whatsapp: "https://wa.me/905325896604",
 } as const;
