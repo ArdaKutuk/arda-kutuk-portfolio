@@ -32,8 +32,8 @@ export default function ProjectVisual({
           src={coverImage}
           alt={title}
           fill
-          sizes="(min-width: 1024px) 640px, 100vw"
-          className="object-cover"
+          sizes="(min-width: 1024px) 720px, 100vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         />
       </div>
     );

@@ -1,6 +1,7 @@
 import Container from "@/components/ui/Container";
 import { socialLinks } from "@/lib/site";
 import { ExternalLinkIcon } from "@/components/ui/icons";
+import Reveal from "@/components/ui/Reveal";
 import type { Dictionary } from "@/i18n/types";
 import { sectionY } from "@/lib/styles";
 
@@ -8,12 +9,12 @@ export default function Contact({ dict }: { dict: Dictionary }) {
   return (
     <section id="contact" className="border-t border-border">
       <Container className={sectionY}>
-        <div className="max-w-[640px]">
-          <h2 className="text-h1 text-ink">{dict.contact.heading}</h2>
-          <p className="text-body-lg text-body mt-4">{dict.contact.description}</p>
-        </div>
+        <Reveal className="max-w-[720px]">
+          <h2 className="text-display text-ink">{dict.contact.heading}</h2>
+          <p className="text-body-lg text-body mt-6 max-w-[520px]">{dict.contact.description}</p>
+        </Reveal>
 
-        <div className="mt-10">
+        <Reveal delay={120} className="mt-12">
           <a
             href={`mailto:${socialLinks.email}`}
             className="text-h1 text-ink no-underline transition-colors hover:text-accent break-all"
@@ -41,7 +42,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
               <ExternalLinkIcon className="text-muted" />
             </a>
           </div>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

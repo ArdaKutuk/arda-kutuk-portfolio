@@ -9,5 +9,3 @@ export const container = "mx-auto w-full max-w-[1200px] px-6 sm:px-8 lg:px-10";
 export const sectionY = "section-y";
 
 export const divider = "border-t border-border";
-
-export const tag = "text-small text-muted";

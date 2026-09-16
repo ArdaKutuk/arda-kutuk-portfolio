@@ -209,10 +209,6 @@ export function getProjects(locale: Locale): Project[] {
   return projectSources.filter((p) => p.status === "published").map((p) => toProject(p, locale));
 }
 
-export function getFeaturedProjects(locale: Locale): Project[] {
-  return getProjects(locale).filter((p) => p.featured);
-}
-
 export function getProjectBySlug(locale: Locale, slug: string): Project | undefined {
   const source = projectSources.find((p) => p.slug === slug && p.status === "published");
   return source ? toProject(source, locale) : undefined;

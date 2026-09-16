@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import ProjectVisual from "@/components/projects/ProjectVisual";
+import Reveal from "@/components/ui/Reveal";
 import { locales, defaultLocale, isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getProjectBySlug, getProjects, projectSlugs } from "@/data/projects";
@@ -74,46 +75,50 @@ export default async function ProjectPage({
           ← {dict.projectDetail.allProjects}
         </Link>
 
-        <header className="mt-8 max-w-[840px]">
-          <span className="text-meta text-accent">{project.category}</span>
-          <h1 className="text-h1 text-ink mt-3">{project.title}</h1>
-          <p className="text-body-lg text-body mt-4 max-w-[60ch]">{project.shortDescription}</p>
+        <Reveal>
+          <header className="mt-8 max-w-[840px]">
+            <span className="text-meta text-accent">{project.category}</span>
+            <h1 className="text-h1 text-ink mt-3">{project.title}</h1>
+            <p className="text-body-lg text-body mt-4 max-w-[60ch]">{project.shortDescription}</p>
 
-          <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
-            <div>
-              <dt className="text-meta text-muted">{dict.projectDetail.role}</dt>
-              <dd className="text-body text-ink mt-1">{project.role}</dd>
-            </div>
-            {project.year && (
+            <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
               <div>
-                <dt className="text-meta text-muted">{dict.projectDetail.year}</dt>
-                <dd className="text-body text-ink mt-1">{project.year}</dd>
+                <dt className="text-meta text-muted">{dict.projectDetail.role}</dt>
+                <dd className="text-body text-ink mt-1">{project.role}</dd>
               </div>
-            )}
-          </dl>
+              {project.year && (
+                <div>
+                  <dt className="text-meta text-muted">{dict.projectDetail.year}</dt>
+                  <dd className="text-body text-ink mt-1">{project.year}</dd>
+                </div>
+              )}
+            </dl>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            {project.githubUrl && (
-              <Button href={project.githubUrl} variant="outline" showArrow={false}>
-                {dict.projectDetail.viewOnGithub}
-              </Button>
-            )}
-            {project.liveUrl && (
-              <Button href={project.liveUrl} variant="solid" showArrow={false}>
-                {dict.projectDetail.liveDemo}
-              </Button>
-            )}
-          </div>
-        </header>
+            <div className="mt-8 flex flex-wrap gap-4">
+              {project.githubUrl && (
+                <Button href={project.githubUrl} variant="outline" showArrow={false}>
+                  {dict.projectDetail.viewOnGithub}
+                </Button>
+              )}
+              {project.liveUrl && (
+                <Button href={project.liveUrl} variant="solid" showArrow={false}>
+                  {dict.projectDetail.liveDemo}
+                </Button>
+              )}
+            </div>
+          </header>
+        </Reveal>
       </Container>
 
       <Container className="mt-12">
-        <ProjectVisual
-          title={project.title}
-          category={project.category}
-          coverImage={project.coverImage}
-          aspect="aspect-[4/3]"
-        />
+        <Reveal delay={120}>
+          <ProjectVisual
+            title={project.title}
+            category={project.category}
+            coverImage={project.coverImage}
+            aspect="aspect-[4/3]"
+          />
+        </Reveal>
       </Container>
 
       <Container className={sectionY}>

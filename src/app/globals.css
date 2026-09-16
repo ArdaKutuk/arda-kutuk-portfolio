@@ -45,9 +45,9 @@
    values per component. */
 @layer components {
   .text-display {
-    font-size: clamp(2.75rem, 1.5rem + 4vw, 5.25rem);
-    line-height: 1.03;
-    letter-spacing: -0.02em;
+    font-size: clamp(2.9rem, 1.25rem + 5.4vw, 6.25rem);
+    line-height: 1.01;
+    letter-spacing: -0.025em;
     font-weight: 700;
   }
   .text-h1 {
@@ -87,31 +87,21 @@
     font-weight: 500;
   }
 
-  /* Readable measure for prose blocks. */
-  .prose-measure {
-    max-width: 62ch;
-  }
-
   /* One consistent vertical rhythm for full sections. */
   .section-y {
     padding-top: clamp(64px, 5rem + 3vw, 112px);
     padding-bottom: clamp(64px, 5rem + 3vw, 112px);
   }
-}
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
+  /* Hero background texture: a faint grid plus one soft, off-white light
+     source — no color glow, no blur blobs. */
+  .hero-texture {
+    background-image:
+      radial-gradient(ellipse 900px 500px at 50% -10%, oklch(97% 0.006 75 / 0.08), transparent 70%),
+      linear-gradient(oklch(97% 0.006 75 / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(97% 0.006 75 / 0.06) 1px, transparent 1px);
+    background-size: 100% 100%, 44px 44px, 44px 44px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.reveal {
-  animation: fadeUp 0.6s ease both;
 }
 
 @media (prefers-reduced-motion: reduce) {

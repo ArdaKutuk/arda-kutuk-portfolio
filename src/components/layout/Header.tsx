@@ -27,11 +27,17 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-bg/90 backdrop-blur transition-shadow ${
-        scrolled ? "border-b border-border" : "border-b border-transparent"
+      className={`sticky top-0 z-50 backdrop-blur transition-[background-color,border-color,box-shadow] duration-300 ${
+        scrolled
+          ? "bg-bg/95 border-b border-border shadow-[0_1px_0_0_rgba(0,0,0,0.02)]"
+          : "bg-bg/70 border-b border-transparent"
       }`}
     >
-      <div className={`${container} flex items-center justify-between h-16 sm:h-[72px]`}>
+      <div
+        className={`${container} flex items-center justify-between transition-[height] duration-300 ${
+          scrolled ? "h-14 sm:h-16" : "h-16 sm:h-[72px]"
+        }`}
+      >
         <a href={`/${locale}#home`} className="text-h3 font-bold tracking-[-0.01em] text-ink no-underline">
           Arda Kütük
         </a>
