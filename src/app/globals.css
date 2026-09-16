@@ -104,6 +104,25 @@
   }
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pure-CSS entrance animation — runs via the browser's animation engine on
+   paint, independent of JavaScript. Content is never left invisible if
+   hydration is slow or fails (a real risk on real mobile devices/networks
+   that a JS/IntersectionObserver-driven reveal does not protect against). */
+.reveal {
+  animation: fadeUp 0.7s ease both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
