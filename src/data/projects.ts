@@ -119,6 +119,7 @@ const projectSources: ProjectSource[] = [
     githubUrl: null,
     liveUrl: null,
     coverImage: "/images/projects/kurumsal-portal.png",
+    gallery: ["/images/projects/kurumsal-portal-admin.png"],
     tr: {
       title: "Kurumsal Portal",
       category: "Kurumsal Yazılım · Ürün Prototipi",

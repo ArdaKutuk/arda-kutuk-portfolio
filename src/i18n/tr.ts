@@ -112,6 +112,7 @@ const tr: Dictionary = {
     allProjects: "Tüm Projeler",
     role: "Rol",
     year: "Yıl",
+    gallery: "Görseller",
     overview: "Genel Bakış",
     problem: "Problem",
     solution: "Çözüm",

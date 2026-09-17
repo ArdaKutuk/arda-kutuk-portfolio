@@ -181,6 +181,31 @@ export default async function ProjectPage({
         </div>
       </Container>
 
+      {project.gallery && project.gallery.length > 0 && (
+        <Container wide className="pb-[var(--section-space)]">
+          <Reveal>
+            <h2 className="text-meta text-muted mb-6">{dict.projectDetail.gallery}</h2>
+            <div
+              className={
+                project.gallery.length === 1
+                  ? ""
+                  : "grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+              }
+            >
+              {project.gallery.map((image) => (
+                <ProjectVisual
+                  key={image}
+                  title={project.title}
+                  category={project.category}
+                  coverImage={image}
+                  aspect="aspect-[16/9]"
+                />
+              ))}
+            </div>
+          </Reveal>
+        </Container>
+      )}
+
       {nextProject && nextProject.slug !== project.slug && (
         <Container className="pb-20">
           <Link

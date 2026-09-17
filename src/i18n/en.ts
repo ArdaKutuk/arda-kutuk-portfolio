@@ -108,6 +108,7 @@ const en: Dictionary = {
     allProjects: "All Projects",
     role: "Role",
     year: "Year",
+    gallery: "Gallery",
     overview: "Overview",
     problem: "Problem",
     solution: "Solution",

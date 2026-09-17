@@ -83,6 +83,7 @@ export interface Dictionary {
     allProjects: string;
     role: string;
     year: string;
+    gallery: string;
     overview: string;
     problem: string;
     solution: string;
