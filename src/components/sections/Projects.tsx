@@ -1,7 +1,7 @@
 import Container from "@/components/ui/Container";
 import { getProjects } from "@/data/projects";
 import ProjectCard from "@/components/projects/ProjectCard";
-import Reveal from "@/components/ui/Reveal";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
 import { sectionY, divider } from "@/lib/styles";
@@ -12,10 +12,10 @@ export default function Projects({ locale, dict }: { locale: Locale; dict: Dicti
   return (
     <section id="work" className={divider}>
       <Container className={sectionY}>
-        <Reveal className="max-w-[640px]">
+        <ScrollReveal className="max-w-[640px]" y={30}>
           <h2 className="text-h1 text-ink">{dict.work.heading}</h2>
           <p className="text-body-lg text-body mt-4">{dict.work.description}</p>
-        </Reveal>
+        </ScrollReveal>
 
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
           {projects.map((project, i) => (

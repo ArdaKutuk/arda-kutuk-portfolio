@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Project } from "@/data/projects";
 import type { Dictionary } from "@/i18n/types";
 import ProjectVisual from "./ProjectVisual";
-import Reveal from "@/components/ui/Reveal";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const underline =
   "bg-[linear-gradient(currentColor,currentColor)] bg-no-repeat bg-left-bottom bg-[length:0%_1px] transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_1px]";
@@ -23,7 +23,7 @@ export default function ProjectCard({
   const indexLabel = String(index).padStart(2, "0");
 
   return (
-    <Reveal delay={((index - 1) % 3) * 70}>
+    <ScrollReveal delay={((index - 1) % 3) * 70} y={40}>
       <Link href={`/${locale}/projects/${project.slug}`} className="group block no-underline">
         <ProjectVisual
           title={project.title}
@@ -32,6 +32,7 @@ export default function ProjectCard({
           aspect="aspect-[4/3]"
           priority={priority}
           sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
+          parallax
         />
         <div className="mt-6">
           <div className="flex items-baseline gap-3">
@@ -51,6 +52,6 @@ export default function ProjectCard({
           </span>
         </div>
       </Link>
-    </Reveal>
+    </ScrollReveal>
   );
 }
