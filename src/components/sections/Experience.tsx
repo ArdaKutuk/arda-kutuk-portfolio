@@ -16,13 +16,14 @@ export default function Experience({ locale, dict }: { locale: Locale; dict: Dic
           <p className="text-body-lg text-body mt-4">{dict.experience.description}</p>
         </Reveal>
 
-        <div className="mt-14 border-t border-border">
+        <div className="mt-14 relative">
+          <span aria-hidden className="absolute left-[4px] top-3 bottom-3 w-[2px] bg-border" />
           {experience.map((entry, i) => (
             <Reveal key={entry.company} delay={i * 80}>
-              <article className="relative pl-6 py-9 border-b border-border">
+              <article className="relative pl-8 py-8 border-b border-border last:border-b-0">
                 <span
                   aria-hidden
-                  className="absolute left-0 top-[2.6rem] h-1.5 w-1.5 rounded-full bg-accent"
+                  className="absolute left-0 top-[2.55rem] h-[10px] w-[10px] rounded-full bg-accent ring-4 ring-bg"
                 />
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                   <div className="flex flex-wrap items-baseline gap-x-3">

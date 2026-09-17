@@ -14,12 +14,16 @@ export default function Currently({ dict }: { dict: Dictionary }) {
 
           <div className="mt-6 flex flex-col gap-4 max-w-[640px]">
             <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-              <span className="text-small text-muted w-24 shrink-0">{dict.currently.buildingLabel}</span>
+              <span className="text-small text-muted w-32 shrink-0">{dict.currently.buildingLabel}</span>
               <span className="text-body text-ink">{dict.currently.buildingValue}</span>
             </div>
             <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-              <span className="text-small text-muted w-24 shrink-0">{dict.currently.focusLabel}</span>
+              <span className="text-small text-muted w-32 shrink-0">{dict.currently.focusLabel}</span>
               <span className="text-body text-ink">{dict.currently.focusValue}</span>
+            </div>
+            <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+              <span className="text-small text-muted w-32 shrink-0">{dict.currently.learningLabel}</span>
+              <span className="text-body text-ink">{dict.currently.learningValue}</span>
             </div>
           </div>
         </Reveal>

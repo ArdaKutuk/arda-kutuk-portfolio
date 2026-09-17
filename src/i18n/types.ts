@@ -56,6 +56,8 @@ export interface Dictionary {
     buildingValue: string;
     focusLabel: string;
     focusValue: string;
+    learningLabel: string;
+    learningValue: string;
   };
   contact: {
     heading: string;

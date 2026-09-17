@@ -11,12 +11,14 @@ export default function ProjectVisual({
   coverImage,
   aspect = "aspect-[4/3]",
   className = "",
+  priority = false,
 }: {
   title: string;
   category: string;
   coverImage?: string;
   aspect?: string;
   className?: string;
+  priority?: boolean;
 }) {
   const monogram = title
     .split(/\s+/)
@@ -27,13 +29,16 @@ export default function ProjectVisual({
 
   if (coverImage) {
     return (
-      <div className={`relative overflow-hidden bg-surface ${aspect} ${className}`}>
+      <div
+        className={`relative overflow-hidden border border-border bg-surface transition-colors duration-300 group-hover:border-accent/40 ${aspect} ${className}`}
+      >
         <Image
           src={coverImage}
           alt={title}
           fill
-          sizes="(min-width: 1024px) 720px, 100vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          priority={priority}
+          sizes="(min-width: 1024px) 1100px, 100vw"
+          className="object-cover transition-[transform,filter] duration-300 ease-out group-hover:scale-[1.015] group-hover:brightness-[1.03]"
         />
       </div>
     );

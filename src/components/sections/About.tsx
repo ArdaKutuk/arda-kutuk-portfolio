@@ -34,6 +34,7 @@ export default function About({ dict }: { dict: Dictionary }) {
                 <dd className="text-body text-ink mt-1.5">{dict.about.basedInValue}</dd>
               </div>
             </dl>
+            <p className="text-meta text-accent mt-6">{dict.hero.eyebrow}</p>
           </Reveal>
         </div>
       </Container>

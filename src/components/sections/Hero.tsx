@@ -1,11 +1,13 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
+import HeroSpotlight from "./HeroSpotlight";
 import type { Dictionary } from "@/i18n/types";
 
 export default function Hero({ dict }: { dict: Dictionary }) {
   return (
     <section id="home" className="relative overflow-hidden bg-ink hero-texture pt-20 pb-24 sm:pt-28 sm:pb-32">
+      <HeroSpotlight />
       <Container className="relative">
         <div className="max-w-[900px]">
           <Reveal>

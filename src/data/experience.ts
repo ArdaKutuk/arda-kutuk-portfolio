@@ -28,7 +28,7 @@ const experienceSources: ExperienceSource[] = [
   {
     company: "ŞEKERBANK",
     location: "İstanbul",
-    tags: ["IT", "Networking", "Cybersecurity"],
+    tags: ["IT Support", "Network Infrastructure", "Cybersecurity"],
     tr: {
       role: "BT Stajyeri",
       text: "Kurumsal BT'nin farklı alanlarında çalışarak teknik destek, ağ altyapısı ve siber güvenlik konularında deneyim kazandım.",
@@ -41,7 +41,7 @@ const experienceSources: ExperienceSource[] = [
   {
     company: "KALE ENDÜSTRİ HOLDİNG",
     location: "İstanbul",
-    tags: ["Business Analysis", "CRM", "Systems"],
+    tags: ["Business Analysis", "CRM", "Requirements Analysis", "System Testing"],
     tr: {
       role: "İş Analisti Stajyeri",
       text: "İş süreçleri, CRM ve kurumsal sistemler üzerinde çalışırken gereksinim analizi, iş akışları, sistem testi ve dijital ürün düşüncesi konularında deneyim kazandım.",

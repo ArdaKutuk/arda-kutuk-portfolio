@@ -27,7 +27,7 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
 
   return (
     <header
-      className={`sticky top-0 z-50 backdrop-blur transition-[background-color,border-color,box-shadow] duration-300 ${
+      className={`sticky top-0 z-50 backdrop-blur-sm transition-[background-color,border-color,box-shadow] duration-300 ${
         scrolled
           ? "bg-bg/95 border-b border-border shadow-[0_1px_0_0_rgba(0,0,0,0.02)]"
           : "bg-bg/70 border-b border-transparent"
@@ -47,9 +47,10 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
             <a
               key={link.href}
               href={link.href}
-              className="text-small text-body no-underline transition-colors hover:text-ink"
+              className="group relative text-small text-body no-underline transition-colors hover:text-ink"
             >
               {link.label}
+              <span className="absolute left-0 -bottom-1 h-px w-0 bg-accent transition-[width] duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>

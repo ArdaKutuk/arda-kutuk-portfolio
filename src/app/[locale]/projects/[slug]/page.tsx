@@ -110,13 +110,14 @@ export default async function ProjectPage({
         </Reveal>
       </Container>
 
-      <Container className="mt-12">
+      <Container wide className="mt-14">
         <Reveal delay={120}>
           <ProjectVisual
             title={project.title}
             category={project.category}
             coverImage={project.coverImage}
             aspect="aspect-[4/3]"
+            priority
           />
         </Reveal>
       </Container>
@@ -124,7 +125,7 @@ export default async function ProjectPage({
       <Container className={sectionY}>
         <div className="border-t border-border">
           <Section label={dict.projectDetail.overview}>
-            <p className="text-body text-body">{project.description}</p>
+            <p className="text-body-lg text-body">{project.description}</p>
           </Section>
 
           {project.problem && (

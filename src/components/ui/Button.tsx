@@ -6,7 +6,8 @@ type Variant = "solid" | "outline" | "text";
  *  legible on both the light sections and the dark hero. */
 type Tone = "light" | "dark";
 
-const base = "inline-flex items-center gap-2 text-small font-medium no-underline transition-colors";
+const base =
+  "inline-flex items-center gap-2 text-small font-medium no-underline transition-[color,background-color,border-color,transform] duration-200 active:scale-[0.97]";
 
 const byVariant: Record<Tone, Record<Variant, string>> = {
   light: {
@@ -37,9 +38,15 @@ export default function Button({
   className?: string;
 }) {
   return (
-    <a href={href} className={`${base} ${byVariant[tone][variant]} ${className}`}>
+    <a href={href} className={`group ${base} ${byVariant[tone][variant]} ${className}`}>
       {children}
-      {showArrow && <ArrowRightIcon className="shrink-0" width={15} height={15} />}
+      {showArrow && (
+        <ArrowRightIcon
+          className="shrink-0 transition-transform duration-200 group-hover:translate-x-1"
+          width={15}
+          height={15}
+        />
+      )}
     </a>
   );
 }

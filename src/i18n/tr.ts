@@ -39,7 +39,7 @@ const tr: Dictionary = {
       {
         title: "Yapay Zeka & Veri",
         description:
-          "Python ve Pandas ile veri temizleme, analiz ve makine öğrenmesi üzerine çalışıyorum.",
+          "Python ve Pandas ile veri temizleme, analiz ve makine öğrenmesi iş akışları geliştiriyorum.",
         technologies: ["Python", "Pandas"],
       },
       {
@@ -85,9 +85,11 @@ const tr: Dictionary = {
     focusLabel: "Odak",
     focusValue:
       "Backend geliştirme temelimi güçlendirirken yapay zeka ve veri odaklı yazılım mühendisliğine yöneliyorum.",
+    learningLabel: "Derinleştiriyorum",
+    learningValue: "Makine öğrenmesi ve veri bilimi",
   },
   contact: {
-    heading: "Birlikte Çalışalım",
+    heading: "Hadi bir şeyler geliştirelim.",
     description: "Yeni bir proje, fikir ya da teknik bir konuşma için ulaşabilirsiniz.",
     emailLabel: "E-posta",
     linkedinLabel: "LinkedIn",

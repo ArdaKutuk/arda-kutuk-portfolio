@@ -36,7 +36,7 @@ const en: Dictionary = {
     areas: [
       {
         title: "AI & Data",
-        description: "Data cleaning, analysis and machine learning with Python and Pandas.",
+        description: "Building data cleaning, analysis and machine learning workflows with Python and Pandas.",
         technologies: ["Python", "Pandas"],
       },
       {
@@ -81,9 +81,11 @@ const en: Dictionary = {
     focusLabel: "Focus",
     focusValue:
       "Moving toward AI and data-driven software engineering while strengthening my backend foundations.",
+    learningLabel: "Deepening",
+    learningValue: "Machine learning and data science",
   },
   contact: {
-    heading: "Let's Work Together",
+    heading: "Let's build something.",
     description: "Reach out about a project, an idea, or just to talk shop.",
     emailLabel: "Email",
     linkedinLabel: "LinkedIn",
