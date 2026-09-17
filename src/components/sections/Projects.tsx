@@ -8,7 +8,6 @@ import { sectionY, divider } from "@/lib/styles";
 
 export default function Projects({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const projects = getProjects(locale);
-  const [featured, ...rest] = projects;
 
   return (
     <section id="work" className={divider}>
@@ -19,18 +18,16 @@ export default function Projects({ locale, dict }: { locale: Locale; dict: Dicti
         </Reveal>
       </Container>
 
-      <Container wide className="mt-16 pb-[var(--section-space)] flex flex-col gap-28 md:gap-36">
-        {featured && (
-          <ProjectCard project={featured} locale={locale} dict={dict} variant="featured" index={1} priority />
-        )}
-        {rest.map((project, i) => (
+      <Container wide className="mt-16 pb-[var(--section-space)] flex flex-col gap-24 md:gap-32">
+        {projects.map((project, i) => (
           <ProjectCard
             key={project.slug}
             project={project}
             locale={locale}
             dict={dict}
-            variant={i % 2 === 0 ? "right" : "left"}
-            index={i + 2}
+            variant={i % 2 === 0 ? "left" : "right"}
+            index={i + 1}
+            priority={i === 0}
           />
         ))}
       </Container>
