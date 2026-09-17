@@ -166,28 +166,67 @@ const projectSources: ProjectSource[] = [
     },
   },
   {
-    // Not published: no verified description, tech stack or screenshots yet.
-    // Kept here so it's a one-line edit away from going live once real
-    // content is supplied — see the final report for what's needed.
+    // No screenshots yet — ProjectVisual falls back to its typographic
+    // mark until real images are supplied.
     slug: "it-servis-masasi",
     featured: false,
-    status: "draft",
-    technologies: [],
+    status: "published",
+    technologies: ["Python", "FastAPI", "SQLAlchemy", "SQLite", "JWT"],
     githubUrl: null,
     liveUrl: null,
     tr: {
       title: "IT Servis Masası",
       category: "Kurumsal Yazılım · IT Servis Yönetimi",
       role: "Bireysel proje",
-      shortDescription: "",
-      description: "",
+      shortDescription:
+        "İş süreçlerini, rol tabanlı yönetimi ve otomatik yönlendirmeyi bir araya getiren, kurumsal IT destek operasyonları için full-stack bir ITSM prototipi.",
+      description:
+        "Şekerbank'taki stajım sırasında gözlemlediğim kurumsal IT destek süreçlerinden esinlenerek geliştirdiğim web tabanlı bir ITSM prototipi. Çalışanların teknik problemlerini ve servis taleplerini tek bir sistem üzerinden açabilmesini, doğru IT ekibine yönlendirilmesini, takip edilmesini ve raporlanmasını hedefler.",
+      problem:
+        "Kurumsal ortamlarda çalışanların teknik problemleri genellikle dağınık kanallardan — e-posta, sözlü talep, farklı sistemler — iletiliyor; bu da taleplerin doğru ekibe ulaşmasını, önceliklendirilmesini ve takip edilmesini zorlaştırıyor.",
+      solution:
+        "Kullanıcıların incident veya service request oluşturup takip edebildiği, adminlerin talepleri onay/red akışıyla yönetip ilgili IT ekibine atayabildiği, IT personelinin de kendisine atanan işleri işleme alabildiği rol tabanlı bir sistem tasarladım. Durum, öncelik, kategori, departman, atanan personel ve SLA süresi gibi alanlarla gerçek bir ticket lifecycle'ı simüle ettim.",
+      features: [
+        "Kullanıcılar için Incident / Service Request oluşturma ve takip",
+        "Admin tarafında onay akışı (Onay Bekliyor → Onaylandı / Reddedildi) ve ekip ataması",
+        "Microsoft Services, Network Operations, Technical Support gibi ekip kuyruklarına yönlendirme",
+        "Her ticket'ta durum, öncelik, kategori, departman ve SLA süresi takibi",
+        "Açık / inceleniyor / çözüldü ticket'lar, kategori dağılımı ve ekip iş yükü için admin dashboard'u",
+        "JWT ve bcrypt tabanlı kimlik doğrulama ile rol bazlı erişim",
+      ],
+      architecture:
+        "İstemci (HTML/CSS/Vanilla JS) → FastAPI REST API → SQLAlchemy ORM → SQLite. Kimlik doğrulama JWT ile sağlanıyor, şifreler bcrypt/Passlib ile hashleniyor, gelen veriler Pydantic ile doğrulanıyor. Veri katmanı SQLAlchemy üzerinden soyutlandığı için SQLite, ileride PostgreSQL gibi bir veritabanıyla değiştirilebilecek şekilde tasarlandı.",
+      challenges:
+        "En büyük zorluk, VPN, Outlook, Teams, Active Directory veya ağ problemi gibi farklı talep türlerini doğru kategori ve ekibe yönlendiren bir mantık kurmaktı. İlk sürümde bunu rule-based bir karar ağacıyla çözdüm; sonraki tasarımda bunun yerine AI destekli kategorilendirme, önceliklendirme ve routing'i bir sonraki adım olarak planladım.",
+      learnings:
+        "Bu proje, bir ticket'ın sadece bir açıklamadan ibaret olmadığını; durum, öncelik, SLA ve sorumlu ekip gibi alanlarla gerçek bir iş sürecini yansıtması gerektiğini gösterdi. Rol tabanlı yetkilendirmeyi ve onay akışını en baştan veri modeline dahil etmek, sonradan eklemekten çok daha sağlıklı oldu.",
     },
     en: {
       title: "IT Service Desk",
       category: "Enterprise Software · IT Service Management",
       role: "Solo project",
-      shortDescription: "",
-      description: "",
+      shortDescription:
+        "A full-stack ITSM prototype for corporate IT support operations, bringing together role-based management, automated routing and SLA tracking.",
+      description:
+        "A web-based ITSM prototype inspired by the corporate IT support processes I observed during my internship at Şekerbank. It lets employees open technical problems and service requests through a single system, routes them to the right IT team, and tracks and reports on them.",
+      problem:
+        "In corporate environments, employees' technical problems are usually reported through scattered channels — email, verbal requests, different systems — which makes it hard for requests to reach the right team, get prioritized and be tracked.",
+      solution:
+        "I designed a role-based system where users can open and track incidents or service requests, admins manage requests through an approve/reject flow and assign them to the right IT team, and IT staff process the work assigned to them. Fields like status, priority, category, department, assignee and SLA duration simulate a real ticket lifecycle rather than a simple complaint form.",
+      features: [
+        "Incident / Service Request creation and tracking for users",
+        "Admin approval flow (Pending → Approved / Rejected) with team assignment",
+        "Routing to team queues such as Microsoft Services, Network Operations and Technical Support",
+        "Status, priority, category, department and SLA tracking on every ticket",
+        "Admin dashboard for open/in-review/resolved tickets, category distribution and team workload",
+        "JWT and bcrypt-based authentication with role-based access",
+      ],
+      architecture:
+        "Client (HTML/CSS/Vanilla JS) → FastAPI REST API → SQLAlchemy ORM → SQLite. Authentication is handled with JWT, passwords are hashed with bcrypt/Passlib, and incoming data is validated with Pydantic. Because the data layer is abstracted through SQLAlchemy, SQLite was designed to be swappable for a database like PostgreSQL later.",
+      challenges:
+        "The main challenge was building routing logic that could correctly categorize and direct different request types — VPN, Outlook, Teams, Active Directory, network issues — to the right team. I solved this with a rule-based decision tree in the first version, and planned AI-assisted categorization, prioritization and routing as the next step in the design.",
+      learnings:
+        "This project reinforced that a ticket is more than a description — it needs fields like status, priority, SLA and owning team to reflect a real business process. Designing role-based authorization and the approval flow into the data model from the start proved far more solid than bolting them on afterward.",
     },
   },
 ];
