@@ -189,7 +189,7 @@ export default async function ProjectPage({
               className={
                 project.gallery.length === 1
                   ? ""
-                  : "grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+                  : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
               }
             >
               {project.gallery.map((image) => (
@@ -199,6 +199,7 @@ export default async function ProjectPage({
                   category={project.category}
                   coverImage={image}
                   aspect="aspect-[16/9]"
+                  sizes="(min-width: 1024px) 460px, (min-width: 640px) 50vw, 100vw"
                 />
               ))}
             </div>

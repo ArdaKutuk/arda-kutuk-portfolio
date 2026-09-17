@@ -119,6 +119,18 @@ const projectSources: ProjectSource[] = [
     technologies: ["Python", "FastAPI", "SQLAlchemy", "SQLite", "JWT"],
     githubUrl: null,
     liveUrl: null,
+    coverImage: "/images/projects/it-servis-masasi/08-admin-genel-bakis.png",
+    gallery: [
+      "/images/projects/it-servis-masasi/01-giris-calisan.png",
+      "/images/projects/it-servis-masasi/02-giris-it-personeli.png",
+      "/images/projects/it-servis-masasi/03-giris-yonetici.png",
+      "/images/projects/it-servis-masasi/04-destek-asistani.png",
+      "/images/projects/it-servis-masasi/05-ticket-olustur.png",
+      "/images/projects/it-servis-masasi/06-istek-olustur.png",
+      "/images/projects/it-servis-masasi/07-cagrilarim.png",
+      "/images/projects/it-servis-masasi/09-admin-ticket-yonetimi.png",
+      "/images/projects/it-servis-masasi/10-admin-kullanici-yonetimi.png",
+    ],
     tr: {
       title: "IT Servis Masası",
       category: "Kurumsal Yazılım · IT Servis Yönetimi",

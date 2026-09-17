@@ -12,6 +12,7 @@ export default function ProjectVisual({
   aspect = "aspect-[4/3]",
   className = "",
   priority = false,
+  sizes = "(min-width: 1024px) 1100px, 100vw",
 }: {
   title: string;
   category: string;
@@ -19,6 +20,7 @@ export default function ProjectVisual({
   aspect?: string;
   className?: string;
   priority?: boolean;
+  sizes?: string;
 }) {
   const monogram = title
     .split(/\s+/)
@@ -37,7 +39,7 @@ export default function ProjectVisual({
           alt={title}
           fill
           priority={priority}
-          sizes="(min-width: 1024px) 1100px, 100vw"
+          sizes={sizes}
           className="object-cover transition-[transform,filter] duration-300 ease-out group-hover:scale-[1.015] group-hover:brightness-[1.03]"
         />
       </div>
