@@ -18,59 +18,59 @@ const tr: Dictionary = {
   },
   hero: {
     eyebrow: "Software Engineering · Data · AI",
-    heading: "Gerçek iş problemlerini çözen yazılım ürünleri geliştiriyorum.",
+    heading: "İş ihtiyaçlarını işlevsel yazılım ürünlerine dönüştürüyorum.",
     description:
-      "Backend sistemler, veri ve yapay zeka üzerine kurum içi araçlar ve dijital ürünler geliştiriyorum. İstanbul merkezli bir Yönetim Bilişim Sistemleri öğrencisiyim.",
+      "Backend sistemleri, veri ve yapay zeka odaklı uygulamalar geliştiriyor; teknik gereksinimleri gerçek iş süreçleriyle bir araya getiriyorum. İstanbul'da yaşayan bir yönetim-bilişim sistemleri öğrencisiyim.",
     primaryCta: "Projeleri İncele",
     secondaryCta: "İletişime Geç",
   },
   work: {
     heading: "Seçilmiş Çalışmalar",
     description:
-      "Yazılım mühendisliği, veri ve backend sistemleri üzerine geliştirdiğim projelerden bir seçki.",
+      "Gerçek ihtiyaçlardan yola çıkarak geliştirdiğim yazılım ve ürün projelerinden seçili çalışmalar.",
     viewProject: "Projeyi İncele",
     liveDemoLabel: "Canlı Demo",
   },
   expertise: {
     heading: "Çalıştığım Alanlar",
-    description:
-      "Çalışmalarım backend geliştirme, veri, yapay zeka ve iş sistemleri arasında şekilleniyor.",
+    description: "Teknik geliştirme ile iş ihtiyaçlarının kesiştiği alanlarda çalışıyorum.",
     areas: [
       {
         title: "Yapay Zeka & Veri",
         description:
-          "Python ve Pandas ile veri temizleme, analiz ve makine öğrenmesi iş akışları geliştiriyorum.",
+          "Python tabanlı veri işleme, analiz ve makine öğrenmesi uygulamaları geliştiriyor; veriden anlamlı çıktılar üretmeye odaklanıyorum.",
         technologies: ["Python", "Pandas"],
       },
       {
         title: "Backend Geliştirme",
         description:
-          "Net bir mimari ve sürdürülebilir sistemler önceliğiyle API'ler, veritabanları ve uygulama mantığı geliştiriyorum.",
+          "API tasarımı, veritabanı modelleme ve uygulama mantığı üzerine sürdürülebilir ve anlaşılır backend sistemleri geliştiriyorum.",
         technologies: ["FastAPI", "SQL", "REST API"],
       },
       {
         title: "Ürün Mühendisliği",
         description:
-          "Arayüzden backend mimarisine kadar uçtan uca işlevsel web ürünleri geliştiriyorum.",
+          "Bir ürünün arayüzünden veri modeline ve backend mimarisine kadar farklı katmanlarını birlikte ele alarak işlevsel dijital ürünler geliştiriyorum.",
         technologies: ["Next.js", "JavaScript", "Git"],
       },
       {
         title: "İş Sistemleri",
         description:
-          "İş akışlarını ve gereksinimleri analiz ederek yazılımın gerçek süreçlere nasıl uyduğunu tasarlıyorum.",
+          "İş gereksinimlerini, süreçleri ve kullanıcı ihtiyaçlarını analiz ederek teknolojinin mevcut operasyonlara nasıl entegre edilebileceği üzerine çalışıyorum.",
         technologies: ["Requirements Analysis", "CRM", "Systems Analysis"],
       },
     ],
   },
   experience: {
     heading: "Deneyim",
-    description: "Teknolojinin kurumsal ortamlarda nasıl işlediğini gördüğüm profesyonel deneyimler.",
+    description:
+      "Kurumsal teknoloji ortamlarında teknik altyapıdan iş süreçlerine kadar farklı alanlarda çalışma deneyimi edindim.",
   },
   about: {
     heading: "Hakkımda",
     paragraphs: [
-      "Kadir Has Üniversitesi'nde Yönetim Bilişim Sistemleri okuyorum; odağım yazılım mühendisliği, veri ve yapay zeka.",
-      "Sadece kod yazmakla değil, bir sistemin teknik ve iş tarafını birlikte düşünmekle ilgileniyorum — gerçek problemleri çözen, sürdürülebilir yazılım ürünleri geliştirmeyi tercih ediyorum.",
+      "Kadir Has Üniversitesi'nde Yönetim Bilişim Sistemleri öğrencisiyim. Yazılım mühendisliği, veri ve yapay zeka odağında kendimi geliştiriyorum.",
+      "Bir problemi yalnızca kod tarafıyla değil; kullanıcı ihtiyacı, iş süreci ve teknik mimariyi birlikte değerlendirerek ele almayı önemsiyorum. Amacım, gerçek ihtiyaçlara karşılık veren sürdürülebilir ve kullanışlı yazılım ürünleri geliştirmek.",
     ],
     studyingLabel: "Eğitim",
     studyingValue: "Yönetim Bilişim Sistemleri",
@@ -81,16 +81,16 @@ const tr: Dictionary = {
   currently: {
     heading: "Şu Anda",
     buildingLabel: "Geliştiriyorum",
-    buildingValue: "Moneytrack — kişisel finans uygulaması",
+    buildingValue: "Moneytrack — Kişisel finans uygulaması",
     focusLabel: "Odak",
     focusValue:
-      "Backend geliştirme temelimi güçlendirirken yapay zeka ve veri odaklı yazılım mühendisliğine yöneliyorum.",
+      "Backend mühendisliği temelimi güçlendirirken veri ve yapay zeka tabanlı yazılım sistemleri üzerine uzmanlaşmaya odaklanıyorum.",
     learningLabel: "Derinleştiriyorum",
     learningValue: "Makine öğrenmesi ve veri bilimi",
   },
   contact: {
     heading: "Hadi bir şeyler geliştirelim.",
-    description: "Yeni bir proje, fikir ya da teknik bir konuşma için ulaşabilirsiniz.",
+    description: "Bir proje, ürün fikri veya teknik iş birliği üzerine konuşmak için benimle iletişime geçebilirsiniz.",
     emailLabel: "E-posta",
     linkedinLabel: "LinkedIn",
     githubLabel: "GitHub",

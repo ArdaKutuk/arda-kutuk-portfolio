@@ -31,7 +31,7 @@ const experienceSources: ExperienceSource[] = [
     tags: ["IT Support", "Network Infrastructure", "Cybersecurity"],
     tr: {
       role: "BT Stajyeri",
-      text: "Kurumsal BT'nin farklı alanlarında çalışarak teknik destek, ağ altyapısı ve siber güvenlik konularında deneyim kazandım.",
+      text: "Kurumsal BT operasyonları kapsamında teknik destek, ağ altyapısı ve siber güvenlik süreçlerini gözlemledim ve farklı teknik operasyonlarda aktif olarak görev aldım.",
     },
     en: {
       role: "IT Intern",
@@ -44,7 +44,7 @@ const experienceSources: ExperienceSource[] = [
     tags: ["Business Analysis", "CRM", "Requirements Analysis", "System Testing"],
     tr: {
       role: "İş Analisti Stajyeri",
-      text: "İş süreçleri, CRM ve kurumsal sistemler üzerinde çalışırken gereksinim analizi, iş akışları, sistem testi ve dijital ürün düşüncesi konularında deneyim kazandım.",
+      text: "İş analizi ve kurumsal sistem süreçlerinde; gereksinim analizi, iş akışlarının modellenmesi, CRM süreçleri ve sistem testleri üzerine çalıştım.",
     },
     en: {
       role: "Business Analyst Intern",

@@ -70,22 +70,22 @@ const projectSources: ProjectSource[] = [
       category: "Kurumsal Yazılım · Ürün Prototipi",
       role: "Bireysel proje",
       shortDescription:
-        "İç hizmetler, bilgiye erişim ve yönetimsel süreçler etrafında tasarlanmış bir kurumsal çalışan portalı prototipi.",
+        "Çalışanların kurum içi hizmetlere ve bilgiye daha hızlı erişebilmesi için tasarlanmış merkezi portal prototipi.",
       description:
-        "Kurumsal Portal, çalışanların iç hizmetlere, bilgiye ve yönetimsel süreçlere tek bir yerden erişebilmesi için tasarladığım bir kurumsal portal prototipidir. Amaç, dağınık iç araçları tek bir tutarlı arayüzde toplamaktı.",
+        "Kurumsal Portal, farklı sistemlere dağılmış kurum içi hizmetleri ve bilgi kaynaklarını daha erişilebilir hale getirmek amacıyla tasarladığım bir çalışan portalı prototipidir. Projenin temel amacı, çalışanların günlük operasyonlarında ihtiyaç duyduğu servisleri tek ve tutarlı bir kullanıcı deneyimi altında bir araya getirmekti.",
       problem:
-        "Kurumsal ortamlarda çalışanlar genellikle farklı sistemler arasında dağılmış iç hizmetlere erişmek zorunda kalır; bu da verimliliği düşürür.",
+        "Kurumsal yapılarda çalışanların ihtiyaç duyduğu bilgiler ve hizmetler çoğu zaman farklı uygulamalar, sistemler ve iletişim kanalları arasında dağılmış durumda bulunuyor. Bu yapı, doğru bilgiye erişimi zorlaştırırken günlük operasyonlarda gereksiz zaman kaybına ve karmaşıklığa neden olabiliyor.",
       solution:
-        "İç hizmetleri, bilgiye erişimi ve yönetimsel işlemleri tek bir portal arayüzünde birleştiren bir prototip tasarladım; öncelik çalışanın günlük iş akışını sadeleştirmekti.",
+        "Farklı kurum içi hizmetleri ve bilgi kaynaklarını merkezi bir portal yapısında birleştiren bir ürün prototipi tasarladım. Bilgi mimarisini ve kullanıcı akışlarını, çalışanların sık kullandığı işlemlere mümkün olduğunca hızlı erişebilmesini sağlayacak şekilde yapılandırdım.",
       features: [
         "Merkezi iç hizmet erişimi",
         "Yönetimsel süreçler için portal arayüzü",
         "Bilgiye erişimi sadeleştiren bilgi mimarisi",
       ],
       challenges:
-        "Birden fazla iç hizmeti, arayüzü karmaşıklaştırmadan tek bir portalda yapılandırmak en büyük zorluktu.",
+        "En önemli zorluk, farklı amaçlara hizmet eden çok sayıda kurum içi fonksiyonu kullanıcı deneyimini karmaşıklaştırmadan tek bir portal yapısı altında organize etmekti.",
       learnings:
-        "Bu proje, kurum içi araçlarda birincil kullanıcının müşteri değil çalışan olduğunu ve bilgi mimarisinin bu bakış açısıyla kurulması gerektiğini gösterdi.",
+        "Bu proje, kurumsal yazılım geliştirirken teknik mimarinin yanı sıra çalışan deneyiminin ve iş süreçlerinin de ürün tasarımının önemli bir parçası olduğunu gösterdi. Aynı zamanda iş analizi, kullanıcı ihtiyaçlarının belirlenmesi ve kurumsal ürün tasarımı arasındaki ilişkiyi uygulamalı olarak ele almamı sağladı.",
     },
     en: {
       title: "Corporate Portal",
@@ -199,13 +199,13 @@ const projectSources: ProjectSource[] = [
       category: "Kişisel Finans · Masaüstü Uygulaması",
       role: "Bireysel proje",
       shortDescription:
-        "Bütçeleri, tekrarlayan giderleri, faturaları ve borçları tek bir arayüzde birleştiren kişisel finans uygulaması.",
+        "Bütçe, düzenli gider, fatura ve borç yönetimini tek bir arayüzde birleştiren kişisel finans uygulaması.",
       description:
-        "Moneytrack, dağınık hesap takibini tek bir yerde toplamak için geliştirdiğim bir masaüstü kişisel finans uygulaması. Bütçe planlama, tekrarlayan giderler, fatura tarihleri ve borç takibini aynı arayüzde bir araya getirir.",
+        "Moneytrack, kişisel finans yönetiminde farklı araçlara dağılmış bilgileri tek bir sistem altında toplamak amacıyla geliştirdiğim masaüstü uygulamasıdır. Uygulama; bütçe planlama, düzenli gider yönetimi, fatura takibi ve borç kayıtlarını ortak bir yapı üzerinden yöneterek kullanıcının finansal durumunu daha kolay takip etmesini sağlar.",
       problem:
-        "Kişisel bütçe takibi genelde birden fazla not, tablo ve hatırlatma arasında dağılıyor; bu da tekrarlayan giderlerin ve borçların gözden kaçmasına yol açıyor.",
+        "Kişisel finans takibi çoğu zaman farklı tablolar, notlar ve hatırlatıcılar üzerinden yürütülüyor. Bu durum özellikle düzenli ödemelerin, yaklaşan faturaların ve mevcut borçların bütünsel olarak takip edilmesini zorlaştırıyor.",
       solution:
-        "Bütçe kategorileri, tekrarlayan gider kayıtları, fatura tarihleri ve borçları tek bir veri modeli altında birleştiren bir masaüstü uygulaması geliştirdim; kullanıcı tüm finansal durumunu tek ekrandan görebiliyor.",
+        "Farklı finansal yükümlülükleri tek bir veri modeli ve kullanıcı arayüzü altında birleştiren merkezi bir masaüstü uygulaması geliştirdim. Böylece kullanıcı, finansal durumunu farklı araçlar arasında geçiş yapmadan tek noktadan görüntüleyebiliyor ve yönetebiliyor.",
       features: [
         "Kategori bazlı bütçe planlama",
         "Tekrarlayan gider takibi",
@@ -213,9 +213,9 @@ const projectSources: ProjectSource[] = [
         "Borç kayıtlarının tek arayüzde izlenmesi",
       ],
       challenges:
-        "En büyük zorluk, tekrarlayan giderleri, tek seferlik faturaları ve borçları aşırı karmaşıklaştırmadan tek bir veri modelinde temsil etmekti.",
+        "Projenin temel zorluklarından biri; düzenli giderler, tek seferlik ödemeler ve borçlar gibi farklı finansal kayıt türlerini kullanıcı deneyimini karmaşıklaştırmadan ortak bir yapı altında modellemekti.",
       learnings:
-        "Bu proje, veri modelini genelleştirmeden önce kullanıcının birincil iş akışına — tekrarlayan giderleri takip etmeye — öncelik vermenin önemini gösterdi.",
+        "Moneytrack, bir ürün geliştirirken yalnızca özellik sayısına değil, kullanıcının temel iş akışına odaklanmanın önemini gösterdi. Bu süreçte veri modelleme, ürün kapsamını belirleme ve kullanıcı odaklı uygulama tasarımı konusunda deneyim kazandım.",
     },
     en: {
       title: "Moneytrack",
