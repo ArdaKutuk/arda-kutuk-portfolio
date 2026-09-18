@@ -154,12 +154,12 @@
 }
 
 /* Selected Work card images: a very light scroll-linked parallax, driven
-   entirely by the compositor (no scroll listeners, no JS). The wrapper is
-   oversized (-inset-6%) so the shift never exposes an edge, and it moves via
-   `transform` on its own element — independent from the image's hover
-   `scale`, so the two never fight over the same property. Progressively
-   enhanced: browsers without scroll-driven animation support just render
-   the static image. */
+   entirely by the compositor (no scroll listeners, no JS). Images use
+   object-fit: contain (never cropped), so the amplitude is kept small
+   enough that it only ever shifts within each image's own letterboxing —
+   it moves via `transform`, independent from the hover `scale`, so the two
+   never fight over the same property. Progressively enhanced: browsers
+   without scroll-driven animation support just render the static image. */
 @supports (animation-timeline: view()) {
   .project-parallax-img {
     animation: project-parallax 1s linear both;
@@ -169,10 +169,10 @@
 
 @keyframes project-parallax {
   from {
-    transform: translateY(-4%);
+    transform: translateY(-3%);
   }
   to {
-    transform: translateY(4%);
+    transform: translateY(3%);
   }
 }
 

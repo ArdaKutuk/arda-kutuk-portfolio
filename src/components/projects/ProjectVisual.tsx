@@ -33,22 +33,18 @@ export default function ProjectVisual({
     .toUpperCase();
 
   if (coverImage) {
-    const image = (
-      <Image
-        src={coverImage}
-        alt={title}
-        fill
-        priority={priority}
-        sizes={sizes}
-        className="object-cover transition-[transform,filter] duration-300 ease-out group-hover:scale-[1.015] group-hover:brightness-[1.03]"
-      />
-    );
-
     return (
       <div
         className={`relative overflow-hidden border border-border bg-surface transition-colors duration-300 group-hover:border-accent/40 ${aspect} ${className}`}
       >
-        {parallax ? <div className="project-parallax-img absolute -inset-[6%]">{image}</div> : image}
+        <Image
+          src={coverImage}
+          alt={title}
+          fill
+          priority={priority}
+          sizes={sizes}
+          className={`object-contain transition-[transform,filter] duration-300 ease-out group-hover:scale-[1.015] group-hover:brightness-[1.03] ${parallax ? "project-parallax-img" : ""}`}
+        />
       </div>
     );
   }
