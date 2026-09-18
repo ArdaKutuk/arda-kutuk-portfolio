@@ -2,6 +2,7 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import HeroSpotlight from "./HeroSpotlight";
+import HeroVideo from "./HeroVideo";
 import type { Dictionary } from "@/i18n/types";
 
 export default function Hero({ dict }: { dict: Dictionary }) {
@@ -34,16 +35,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
 
           <Reveal delay={200} className="w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0">
             <div className="overflow-hidden rounded-md border border-bg/15 bg-bg/5 aspect-video">
-              <video
-                className="h-full w-full object-cover"
-                src="/videos/hero-intro.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                controls
-                preload="auto"
-              />
+              <HeroVideo src="/videos/hero-intro.mp4" />
             </div>
           </Reveal>
         </div>

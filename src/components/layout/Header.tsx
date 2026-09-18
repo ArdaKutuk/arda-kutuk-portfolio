@@ -7,9 +7,12 @@ import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import { MenuIcon, CloseIcon } from "@/components/ui/icons";
 import { container } from "@/lib/styles";
 
+const sectionIds = ["work", "experience", "about", "contact"];
+
 export default function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -18,11 +21,28 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   const navLinks = [
-    { href: `/${locale}#work`, label: dict.nav.work },
-    { href: `/${locale}#experience`, label: dict.nav.experience },
-    { href: `/${locale}#about`, label: dict.nav.about },
-    { href: `/${locale}#contact`, label: dict.nav.contact },
+    { href: `/${locale}#work`, label: dict.nav.work, id: "work" },
+    { href: `/${locale}#experience`, label: dict.nav.experience, id: "experience" },
+    { href: `/${locale}#about`, label: dict.nav.about, id: "about" },
+    { href: `/${locale}#contact`, label: dict.nav.contact, id: "contact" },
   ];
 
   return (
@@ -43,16 +63,26 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
         </a>
 
         <nav className="hidden nav:flex items-center gap-8" aria-label="Primary">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="group relative text-small text-body no-underline transition-colors hover:text-ink"
-            >
-              {link.label}
-              <span className="absolute left-0 -bottom-1 h-px w-0 bg-accent transition-[width] duration-300 group-hover:w-full" />
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = link.id === activeId;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "true" : undefined}
+                className={`group relative text-small no-underline transition-colors hover:text-ink ${
+                  isActive ? "font-semibold text-ink" : "text-body"
+                }`}
+              >
+                {link.label}
+                <span
+                  className={`absolute left-0 -bottom-1 h-px bg-accent transition-[width] duration-300 group-hover:w-full ${
+                    isActive ? "w-full" : "w-0"
+                  }`}
+                />
+              </a>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-5">
@@ -82,7 +112,8 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-h3 text-ink no-underline"
+              aria-current={link.id === activeId ? "true" : undefined}
+              className={`text-h3 no-underline ${link.id === activeId ? "text-accent" : "text-ink"}`}
             >
               {link.label}
             </a>
