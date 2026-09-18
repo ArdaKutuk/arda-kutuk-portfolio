@@ -66,6 +66,15 @@ export interface Dictionary {
     linkedinLabel: string;
     githubLabel: string;
   };
+  meeting: {
+    badge: string;
+    title: string;
+    description: string;
+    duration: string;
+    platform: string;
+    price: string;
+    cta: string;
+  };
   footer: {
     tagline: string;
     copyright: string; // "{year}" is replaced at render time

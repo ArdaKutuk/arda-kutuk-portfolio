@@ -91,6 +91,16 @@ const en: Dictionary = {
     linkedinLabel: "LinkedIn",
     githubLabel: "GitHub",
   },
+  meeting: {
+    badge: "Available for selected projects",
+    title: "Let's talk about what you're building.",
+    description:
+      "In a short 30-minute call, we can discuss your idea, the scope of your project, or simply meet and have a conversation.",
+    duration: "30 min",
+    platform: "Google Meet",
+    price: "Free",
+    cta: "Book a meeting",
+  },
   footer: {
     tagline: "Software Engineering · Data · AI",
     copyright: "© {year} Arda Kütük.",

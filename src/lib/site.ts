@@ -10,3 +10,5 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/ardak%C3%BCt%C3%BCk/",
   email: "ardakutuk04@icloud.com",
 } as const;
+
+export const calendlyUrl = "https://calendly.com/ardakutuk04/30min";

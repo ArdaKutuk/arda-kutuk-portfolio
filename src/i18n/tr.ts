@@ -95,6 +95,16 @@ const tr: Dictionary = {
     linkedinLabel: "LinkedIn",
     githubLabel: "GitHub",
   },
+  meeting: {
+    badge: "Yeni projelere açığım",
+    title: "Aklındaki fikri konuşalım.",
+    description:
+      "30 dakikalık kısa bir görüşmede fikrini, projenin kapsamını konuşabilir ya da sadece tanışıp sohbet edebiliriz.",
+    duration: "30 dk",
+    platform: "Google Meet",
+    price: "Ücretsiz",
+    cta: "Görüşme planla",
+  },
   footer: {
     tagline: "Software Engineering · Data · AI",
     copyright: "© {year} Arda Kütük.",
