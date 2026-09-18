@@ -17,9 +17,10 @@
   /* Matches the header's nav collapse breakpoint. */
   --breakpoint-nav: 860px;
 
-  /* Single source of truth for section vertical rhythm — generous on
-     desktop, naturally compact on mobile via the clamp() lower bound. */
-  --section-space: clamp(64px, 4.5rem + 3.5vw, 132px);
+  /* Single source of truth for section vertical rhythm — ~85-95px on
+     desktop, ~60-72px on mobile. The hero keeps its own, slightly more
+     generous padding (see Hero.tsx), unaffected by this token. */
+  --section-space: clamp(60px, 3.25rem + 2.9vw, 95px);
 }
 
 @layer base {

@@ -35,26 +35,20 @@ const en: Dictionary = {
     description: "My work sits between backend development, data, AI and business systems.",
     areas: [
       {
-        title: "AI & Data",
-        description: "Building data cleaning, analysis and machine learning workflows with Python and Pandas.",
-        technologies: ["Python", "Pandas"],
+        title: "Backend Development",
+        technologies: ["FastAPI", "SQL", "REST APIs"],
       },
       {
-        title: "Backend Engineering",
-        description:
-          "APIs, databases and application logic, built with an emphasis on clear architecture and maintainable systems.",
-        technologies: ["FastAPI", "SQL", "REST API"],
+        title: "AI & Data",
+        technologies: ["Python", "Pandas", "Machine Learning"],
       },
       {
         title: "Product Engineering",
-        description: "Functional web products end to end, from interface to backend architecture.",
         technologies: ["Next.js", "JavaScript", "Git"],
       },
       {
         title: "Business Systems",
-        description:
-          "Analyzing workflows and requirements to design how software fits into real business processes.",
-        technologies: ["Requirements Analysis", "CRM", "Systems Analysis"],
+        technologies: ["Requirements", "CRM", "Systems Analysis"],
       },
     ],
   },
@@ -64,25 +58,13 @@ const en: Dictionary = {
   },
   about: {
     heading: "About",
-    paragraphs: [
-      "I'm a Management Information Systems student at Kadir Has University, focused on software engineering, data and AI.",
-      "I care about more than writing code — I like thinking through both the technical and business side of a system, and prefer building software that solves real problems and holds up over time.",
-    ],
+    paragraph:
+      "I'm a Management Information Systems student. I focus on combining technical development with business processes to build software products for real problems.",
     studyingLabel: "Studying",
     studyingValue: "Management Information Systems",
     universityValue: "Kadir Has University",
     basedInLabel: "Based in",
     basedInValue: "Istanbul, Türkiye",
-  },
-  currently: {
-    heading: "Currently",
-    buildingLabel: "Building",
-    buildingValue: "Moneytrack — a personal finance app",
-    focusLabel: "Focus",
-    focusValue:
-      "Moving toward AI and data-driven software engineering while strengthening my backend foundations.",
-    learningLabel: "Deepening",
-    learningValue: "Machine learning and data science",
   },
   contact: {
     heading: "Let's build something.",
@@ -103,7 +85,7 @@ const en: Dictionary = {
   },
   footer: {
     tagline: "Software Engineering · Data · AI",
-    copyright: "© {year} Arda Kütük.",
+    copyright: "© {year}",
   },
   languageSwitcher: {
     tr: "TR",

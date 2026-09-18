@@ -5,7 +5,6 @@ import Projects from "@/components/sections/Projects";
 import Expertise from "@/components/sections/Expertise";
 import Experience from "@/components/sections/Experience";
 import About from "@/components/sections/About";
-import Currently from "@/components/sections/Currently";
 import Contact from "@/components/sections/Contact";
 
 export default async function Home({
@@ -24,7 +23,6 @@ export default async function Home({
       <Expertise dict={dict} />
       <Experience locale={locale} dict={dict} />
       <About dict={dict} />
-      <Currently dict={dict} />
       <Contact dict={dict} />
     </>
   );

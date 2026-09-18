@@ -1,6 +1,5 @@
 export interface ExpertiseArea {
   title: string;
-  description: string;
   technologies: string[];
 }
 
@@ -43,21 +42,12 @@ export interface Dictionary {
   };
   about: {
     heading: string;
-    paragraphs: string[];
+    paragraph: string;
     studyingLabel: string;
     studyingValue: string;
     universityValue: string;
     basedInLabel: string;
     basedInValue: string;
-  };
-  currently: {
-    heading: string;
-    buildingLabel: string;
-    buildingValue: string;
-    focusLabel: string;
-    focusValue: string;
-    learningLabel: string;
-    learningValue: string;
   };
   contact: {
     heading: string;

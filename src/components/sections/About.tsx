@@ -10,13 +10,7 @@ export default function About({ dict }: { dict: Dictionary }) {
         <div className="grid grid-cols-1 md:grid-cols-[1fr_260px] gap-10 md:gap-16">
           <Reveal>
             <h2 className="text-meta text-muted">{dict.about.heading}</h2>
-            <div className="mt-4 flex flex-col gap-4 max-w-[50ch]">
-              {dict.about.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="text-h2 text-ink leading-[1.35]">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+            <p className="text-h2 text-ink leading-[1.35] mt-4 max-w-[50ch]">{dict.about.paragraph}</p>
           </Reveal>
 
           <Reveal delay={120}>

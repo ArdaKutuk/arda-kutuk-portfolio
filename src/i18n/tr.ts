@@ -36,28 +36,20 @@ const tr: Dictionary = {
     description: "Teknik geliştirme ile iş ihtiyaçlarının kesiştiği alanlarda çalışıyorum.",
     areas: [
       {
-        title: "Yapay Zeka & Veri",
-        description:
-          "Python tabanlı veri işleme, analiz ve makine öğrenmesi uygulamaları geliştiriyor; veriden anlamlı çıktılar üretmeye odaklanıyorum.",
-        technologies: ["Python", "Pandas"],
+        title: "Backend Geliştirme",
+        technologies: ["FastAPI", "SQL", "REST APIs"],
       },
       {
-        title: "Backend Geliştirme",
-        description:
-          "API tasarımı, veritabanı modelleme ve uygulama mantığı üzerine sürdürülebilir ve anlaşılır backend sistemleri geliştiriyorum.",
-        technologies: ["FastAPI", "SQL", "REST API"],
+        title: "Yapay Zeka & Veri",
+        technologies: ["Python", "Pandas", "Machine Learning"],
       },
       {
         title: "Ürün Mühendisliği",
-        description:
-          "Bir ürünün arayüzünden veri modeline ve backend mimarisine kadar farklı katmanlarını birlikte ele alarak işlevsel dijital ürünler geliştiriyorum.",
         technologies: ["Next.js", "JavaScript", "Git"],
       },
       {
         title: "İş Sistemleri",
-        description:
-          "İş gereksinimlerini, süreçleri ve kullanıcı ihtiyaçlarını analiz ederek teknolojinin mevcut operasyonlara nasıl entegre edilebileceği üzerine çalışıyorum.",
-        technologies: ["Requirements Analysis", "CRM", "Systems Analysis"],
+        technologies: ["Requirements", "CRM", "Systems Analysis"],
       },
     ],
   },
@@ -68,25 +60,13 @@ const tr: Dictionary = {
   },
   about: {
     heading: "Hakkımda",
-    paragraphs: [
-      "Kadir Has Üniversitesi'nde Yönetim Bilişim Sistemleri öğrencisiyim. Yazılım mühendisliği, veri ve yapay zeka odağında kendimi geliştiriyorum.",
-      "Bir problemi yalnızca kod tarafıyla değil; kullanıcı ihtiyacı, iş süreci ve teknik mimariyi birlikte değerlendirerek ele almayı önemsiyorum. Amacım, gerçek ihtiyaçlara karşılık veren sürdürülebilir ve kullanışlı yazılım ürünleri geliştirmek.",
-    ],
+    paragraph:
+      "Yönetim Bilişim Sistemleri öğrencisiyim. Teknik geliştirmeyi iş süreçleriyle birleştirerek gerçek problemlere yönelik yazılım ürünleri geliştirmeye odaklanıyorum.",
     studyingLabel: "Eğitim",
     studyingValue: "Yönetim Bilişim Sistemleri",
     universityValue: "Kadir Has Üniversitesi",
     basedInLabel: "Konum",
     basedInValue: "İstanbul, Türkiye",
-  },
-  currently: {
-    heading: "Şu Anda",
-    buildingLabel: "Geliştiriyorum",
-    buildingValue: "Moneytrack — Kişisel finans uygulaması",
-    focusLabel: "Odak",
-    focusValue:
-      "Backend mühendisliği temelimi güçlendirirken veri ve yapay zeka tabanlı yazılım sistemleri üzerine uzmanlaşmaya odaklanıyorum.",
-    learningLabel: "Derinleştiriyorum",
-    learningValue: "Makine öğrenmesi ve veri bilimi",
   },
   contact: {
     heading: "Hadi bir şeyler geliştirelim.",
@@ -107,7 +87,7 @@ const tr: Dictionary = {
   },
   footer: {
     tagline: "Software Engineering · Data · AI",
-    copyright: "© {year} Arda Kütük.",
+    copyright: "© {year}",
   },
   languageSwitcher: {
     tr: "TR",

@@ -91,7 +91,7 @@ export default async function LocaleLayout({
         />
         <Header locale={locale} dict={dict} />
         <main className="flex-1">{children}</main>
-        <Footer locale={locale} dict={dict} />
+        <Footer dict={dict} />
       </body>
     </html>
   );
